@@ -18,15 +18,6 @@
   "rules": {
     "prefer-const": "error",
     "no-var": "error",
-    "semi": [
-      "error",
-      "never"
-    ],
-    "quotes": [
-      "error",
-      "single"
-    ],
-    "indent": ["error", 2],
     "react/prop-types": [0]
   }
 }

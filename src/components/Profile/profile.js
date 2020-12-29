@@ -1,16 +1,32 @@
 import React, { useState, useEffect } from 'react'
+import { Redirect, withRouter } from 'react-router-dom'
 import axios from 'axios'
 import apiUrl from '../../apiConfig'
 import Card from '../Card/Card'
 import { Button, Modal } from 'react-bootstrap'
 
-function Profile ({ user }) {
+function Profile ({ user, history }) {
   const [index, setIndex] = useState([])
   const [show, setShow] = useState(false)
   const [message, setMessage] = useState({})
+  const [messageId, setMessageId] = useState(null)
+  const [isUpdated, setIsUpdated] = useState(false)
+
+  const handleChange = event => {
+    console.log(messageId)
+    event.persist()
+    setMessage(prevMessage => {
+      const updatedMessage = { [event.target.name]: event.target.value }
+      console.log(updatedMessage)
+      const editedMessage = Object.assign({}, prevMessage, updatedMessage)
+      console.log(editedMessage)
+      return editedMessage
+    })
+  }
+
   const handleClose = () => setShow(false)
   const handleShow = (event) => {
-    console.log(event.target.id)
+    setMessageId(event.target.id)
     setShow(true)
     axios({
       url: `${apiUrl}/messages/${event.target.id}`,
@@ -20,6 +36,21 @@ function Profile ({ user }) {
       }
     })
       .then(res => setMessage(res.data.message))
+  }
+
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    axios({
+      url: `${apiUrl}/messages/${messageId}`,
+      method: 'PATCH',
+      headers: {
+        'Authorization': `Token token=${user.token}`
+      },
+      data: { message }
+    })
+      .then(setIsUpdated(true))
+    console.log(isUpdated)
+      .then(<Redirect to ={'/'} />)
   }
 
   useEffect(() => {
@@ -58,14 +89,14 @@ function Profile ({ user }) {
           <Modal.Title>Update</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <form id="message" name="message">
+          <form onSubmit={handleSubmit} id="message" name="message">
             <p>Name:</p>
-            <input value={message.name} name="name" placeholder="Name"></input>
+            <input onChange={handleChange} value={message.name} name="name" placeholder="Name"></input>
             <p>Message:</p>
-            <textarea value={message.content} name="content" cols={50} rows={5} placeholder=""></textarea>
-            <input value={message.clinician} name="clinician" placeholder="Clinician"></input>
-            <input value={message.facility} name="facility" placeholder="Facilty"></input>
-            <input value={message.state} name="state" placeholder="Location"></input>
+            <textarea onChange={handleChange} value={message.content} name="content" cols={50} rows={5} placeholder=""></textarea>
+            <input onChange={handleChange} value={message.clinician} name="clinician" placeholder="Clinician"></input>
+            <input onChange={handleChange} value={message.facility} name="facility" placeholder="Facilty"></input>
+            <input onChange={handleChange} value={message.state} name="state" placeholder="Location"></input>
             <button type="submit">Send</button>
           </form>
         </Modal.Body>
@@ -80,4 +111,4 @@ function Profile ({ user }) {
 
   )
 }
-export default Profile
+export default withRouter(Profile)

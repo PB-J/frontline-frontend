@@ -10,6 +10,7 @@ import SignOut from '../SignOut/SignOut'
 import ChangePassword from '../ChangePassword/ChangePassword'
 import Message from '../Messages/Message'
 import Index from '../Index/Index'
+import Profile from '../Profile/profile'
 
 class App extends Component {
   constructor () {
@@ -50,8 +51,8 @@ class App extends Component {
           <Route path='/sign-in' render={() => (
             <SignIn msgAlert={this.msgAlert} setUser={this.setUser} />
           )} />
-          <Route path='/' render={() => (
-            <Index />
+          <Route exact path='/' render={() => (
+            <Index user={user} />
           )} />
           <AuthenticatedRoute user={user} path='/sign-out' render={() => (
             <SignOut msgAlert={this.msgAlert} clearUser={this.clearUser} user={user} />
@@ -59,8 +60,11 @@ class App extends Component {
           <AuthenticatedRoute user={user} path='/change-password' render={() => (
             <ChangePassword msgAlert={this.msgAlert} user={user} />
           )} />
-          <AuthenticatedRoute user={user} path='/' render={() => (
-            <Message msgAlert={this.msgAlert} user={user} />
+          <AuthenticatedRoute user={user} exact path='/message' render={() => (
+            <Message msgAlert={this.msgAlert} user={user} history={history} />
+          )} />
+          <AuthenticatedRoute user={user} path='/profile' render={() => (
+            <Profile user={user} history={history}/>
           )} />
         </main>
       </Fragment>

@@ -109,7 +109,7 @@ function Profile ({ user }) {
   </div>)
   return (
     <div>
-      <div className="index-container">{messageData}</div>
+      <div className="index-container">{messageData.reverse()}</div>
 
       <Modal
         show={show}

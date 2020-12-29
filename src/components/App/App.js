@@ -51,7 +51,7 @@ class App extends Component {
           <Route path='/sign-in' render={() => (
             <SignIn msgAlert={this.msgAlert} setUser={this.setUser} />
           )} />
-          <Route path='/' render={() => (
+          <Route exact path='/' render={() => (
             <Index user={user} />
           )} />
           <AuthenticatedRoute user={user} path='/sign-out' render={() => (
@@ -60,8 +60,8 @@ class App extends Component {
           <AuthenticatedRoute user={user} path='/change-password' render={() => (
             <ChangePassword msgAlert={this.msgAlert} user={user} />
           )} />
-          <AuthenticatedRoute user={user} path='/' render={() => (
-            <Message msgAlert={this.msgAlert} user={user} />
+          <AuthenticatedRoute user={user} exact path='/message' render={() => (
+            <Message msgAlert={this.msgAlert} user={user} history={history} />
           )} />
           <AuthenticatedRoute user={user} path='/profile' render={() => (
             <Profile user={user} history={history}/>

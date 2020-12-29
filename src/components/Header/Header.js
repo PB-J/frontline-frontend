@@ -1,6 +1,7 @@
-import React, { Fragment, useState } from 'react'
+import React, { Fragment } from 'react'
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
+<<<<<<< HEAD
 import { Form, FormControl } from 'react-bootstrap'
 
 // Image and Icon imports
@@ -8,12 +9,15 @@ import appLogo from '../../Images/MediLogo.svg'
 import searchIcon from '../../Images/SearchIcon.svg'
 
 import './header.scss'
+=======
+>>>>>>> 9096881... reorganize message
 
 const authenticatedOptions = (
   <Fragment>
     <Nav.Link href="#change-password">Change Password</Nav.Link>
     <Nav.Link href="#sign-out">Sign Out</Nav.Link>
     <Nav.Link href="#profile">Profile</Nav.Link>
+    <Nav.Link href="#message">Message</Nav.Link>
   </Fragment>
 )
 

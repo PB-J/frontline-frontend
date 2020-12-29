@@ -2,10 +2,11 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import apiUrl from '../../apiConfig'
 
-const Message = ({ user }) => {
+const Message = ({ user, history }) => {
   const [message, setMessage] = useState({})
   const [messageId, setMessageId] = useState(null)
   const [index, setIndex] = useState([])
+  console.log('!!!', this.props)
   console.log(index)
 
   const handleChange = event => {
@@ -62,7 +63,7 @@ const Message = ({ user }) => {
         <input name="clinician" onChange={handleChange} placeholder="Clinician"></input>
         <input name="facility" onChange={handleChange} placeholder="Facilty"></input>
         <input name="state" onChange={handleChange} placeholder="Location"></input>
-        <button type="submit">Send</button>
+        <button to='/' type="submit">Send</button>
       </form>
     </div>
   )

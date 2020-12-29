@@ -4,7 +4,8 @@ import apiUrl from '../../apiConfig'
 import Card from '../Card/Card'
 import './index.scss'
 
-const Index = () => {
+const Index = ({ user }) => {
+  console.log(user)
   const [index, setIndex] = useState([])
 
   useEffect(() => {

@@ -1,16 +1,14 @@
 import React, { useState, useEffect } from 'react'
-import { Redirect, withRouter } from 'react-router-dom'
 import axios from 'axios'
 import apiUrl from '../../apiConfig'
 import Card from '../Card/Card'
 import { Button, Modal } from 'react-bootstrap'
 
-function Profile ({ user, history }) {
+function Profile ({ user }) {
   const [index, setIndex] = useState([])
   const [show, setShow] = useState(false)
   const [message, setMessage] = useState({})
   const [messageId, setMessageId] = useState(null)
-  const [isUpdated, setIsUpdated] = useState(false)
 
   const handleChange = event => {
     console.log(messageId)
@@ -48,9 +46,42 @@ function Profile ({ user, history }) {
       },
       data: { message }
     })
-      .then(setIsUpdated(true))
-    console.log(isUpdated)
-      .then(<Redirect to ={'/'} />)
+      .then(() => {
+        return (
+          axios({
+            url: `${apiUrl}/profile/`,
+            method: 'GET',
+            headers: {
+              'Authorization': `Token token=${user.token}`
+            }
+          })
+            .then(res => setIndex(res.data.messages))
+        )
+      })
+  }
+
+  const handleDelete = (event) => {
+    console.log(event.target.name)
+    axios({
+      url: `${apiUrl}/messages/${event.target.name}`,
+      method: 'DELETE',
+      headers: {
+        'Authorization': `Token token=${user.token}`
+      },
+      data: { message }
+    })
+      .then(() => {
+        return (
+          axios({
+            url: `${apiUrl}/profile/`,
+            method: 'GET',
+            headers: {
+              'Authorization': `Token token=${user.token}`
+            }
+          })
+            .then(res => setIndex(res.data.messages))
+        )
+      })
   }
 
   useEffect(() => {
@@ -65,6 +96,7 @@ function Profile ({ user, history }) {
   }, [])
   const messageData = index.map(item => <div key={item._id}>
     <Card
+      handleDelete={handleDelete}
       name={item.name}
       content={item.content}
       facility={item.facility}
@@ -97,7 +129,7 @@ function Profile ({ user, history }) {
             <input onChange={handleChange} value={message.clinician} name="clinician" placeholder="Clinician"></input>
             <input onChange={handleChange} value={message.facility} name="facility" placeholder="Facilty"></input>
             <input onChange={handleChange} value={message.state} name="state" placeholder="Location"></input>
-            <button type="submit">Send</button>
+            <button onClick={handleClose} type="submit">Send</button>
           </form>
         </Modal.Body>
         <Modal.Footer>
@@ -111,4 +143,4 @@ function Profile ({ user, history }) {
 
   )
 }
-export default withRouter(Profile)
+export default Profile

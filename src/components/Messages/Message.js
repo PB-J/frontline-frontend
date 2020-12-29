@@ -5,6 +5,8 @@ import apiUrl from '../../apiConfig'
 const Message = ({ user }) => {
   const [message, setMessage] = useState({})
   const [messageId, setMessageId] = useState(null)
+  const [index, setIndex] = useState([])
+  console.log(index)
 
   const handleChange = event => {
     console.log(messageId)
@@ -36,6 +38,18 @@ const Message = ({ user }) => {
       .then(res => setMessageId(res.data.message._id))
       .then(setMessage({}))
       .then(() => formReset())
+      .then(() => {
+        return (
+          axios({
+            url: `${apiUrl}/`,
+            method: 'GET',
+            headers: {
+              'Authorization': `Token token=${user.token}`
+            }
+          })
+            .then(res => setIndex(res.data.messages))
+        )
+      })
   }
 
   return (

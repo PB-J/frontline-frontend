@@ -1,0 +1,21 @@
+.navbar {
+  display: flex !important;
+  justify-content: space-between !important;
+  font-family: 'Spartan', sans-serif;
+}
+
+.navbar-collapse {
+  flex-grow: unset;
+}
+
+.search-icon {
+  display: flex;
+  img {
+    margin: 5px;
+  }
+}
+
+.app-logo {
+  img {
+  }
+}

@@ -1,6 +1,13 @@
 import React, { Fragment } from 'react'
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
+import { Form, FormControl } from 'react-bootstrap'
+
+// Image and Icon imports
+import appLogo from '../../Images/MediLogo.svg'
+import searchIcon from '../../Images/SearchIcon.svg'
+
+import './header.scss'
 
 const authenticatedOptions = (
   <Fragment>
@@ -16,23 +23,28 @@ const unauthenticatedOptions = (
   </Fragment>
 )
 
-const alwaysOptions = (
-  <Fragment>
-    <Nav.Link to="/">Home</Nav.Link>
-  </Fragment>
-)
-
 const Header = ({ user }) => (
-  <Navbar bg="primary" variant="dark" expand="md">
-    <Navbar.Brand href="#">
-      react-auth-template
-    </Navbar.Brand>
+  <Navbar className="header-nav-bar" expand="md">
+    <div className="search-icon">
+      <img src={searchIcon}></img>
+      <Form inline>
+        <FormControl
+          type="text"
+          placeholder="Search"
+          className="nav-search-bar mr-sm-2"
+        />
+      </Form>
+    </div>
+    <div className="app-logo">
+      <img src={appLogo} alt="Medi thanks logo"></img>
+    </div>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="ml-auto">
-        { user && <span className="navbar-text mr-2">Welcome, {user.email}</span>}
-        { alwaysOptions }
-        { user ? authenticatedOptions : unauthenticatedOptions }
+        {user && (
+          <span className="navbar-text mr-2">Welcome, {user.email}</span>
+        )}
+        {user ? authenticatedOptions : unauthenticatedOptions}
       </Nav>
     </Navbar.Collapse>
   </Navbar>

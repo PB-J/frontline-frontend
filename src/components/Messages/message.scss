@@ -5,9 +5,11 @@
     font-weight: bold;
     margin-right: 10px;
 }
+
 h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
 }
+
 .create-message-container {
     margin-top: 25px;
     border: 2px solid black;
@@ -45,12 +47,13 @@ h1 {
 
 .create-message-title-text {
     align-self: center;
-    color: gray;
+    color: #576464;
 }
 
 .create-message-textarea {
     width: 90%;
 }
+
 .create-message-submit {
     background-color: #03838C;
     color: white;

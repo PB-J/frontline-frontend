@@ -18,7 +18,7 @@ const Index = ({ user, searchValue }) => {
   console.log('index value is:', index)
 
   const filterData = index.filter((item) =>
-    item.facility.toLowerCase().includes(searchValue.toLowerCase())
+    item.content.toLowerCase().includes(searchValue.toLowerCase())
   )
 
   const messageData = filterData.map((item) => (

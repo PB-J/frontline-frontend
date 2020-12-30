@@ -3,6 +3,7 @@ import axios from 'axios'
 import apiUrl from '../../apiConfig'
 import { Redirect, withRouter } from 'react-router-dom'
 // import Picker from 'emoji-picker-react'
+// import Col from 'react-bootstrap/Col'
 import './message.scss'
 
 const Message = ({ user }) => {

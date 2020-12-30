@@ -20,15 +20,16 @@ function Card({
   return (
     <div className="card-container">
       <div className="card-heading">
-        <h2>{content}</h2>
+        <p className="dates">{moment(date).format('MMMM Do YYYY, h:mm a')}</p>
         <div className="hover-icon">
           <BsThreeDotsVertical />
         </div>
       </div>
-      <h3>{name}</h3>
-      <p>{facility}</p>
-      <p>{moment(date).format('MMMM Do YYYY, h:mm a')}</p>
-      <p>{clinician}</p>
+      <h2 className="content">{content}</h2><br/>
+      <h3 className="name">-{name}</h3>
+      <p className="line">_________________________________</p>
+      <p className="facility">#{facility}</p>
+      <p className="clinician">#{clinician}</p>
       <div className="hover-container">
         {user && user._id === owner ? (
           <Button id={id} variant="primary" onClick={handleShow}>

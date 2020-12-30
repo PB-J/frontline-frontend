@@ -25,7 +25,54 @@
   .hover-icon {
     font-size: large;
   }
-.card-heading {
+  
+  .card-heading {
     display: flex;
     justify-content: space-between;
+  }
+
+.card-container {
+    border: 1px solid black;
+    padding: 20px 20px 0px 20px;
+    margin: 1em;
+    border-radius: 10px;
+}
+
+.dates {
+    float: right;
+    color: #576464;
+    font-size: 12px;
+    font-family: 'Spartan', sans-serif; 
+}
+
+.content {
+    font-family: 'Spartan', sans-serif;
+    font-size: 20px;
+    font-weight: 900;
+    text-align: left;
+}
+
+.name {
+    font-family: 'Spartan', sans-serif;
+    font-size: 16px;
+    color: #576464;
+    font-weight: 700;
+    float: left;
+}
+
+.line {
+    color: #c4c4c4;
+}
+
+.facility {
+    color: #03838C;
+    font-size: 16px;
+    margin: 30px 0px 0px 0px;
+    font-weight: 600;
+}
+
+.clinician {
+    color: #03838C;
+    font-size: 16px;
+    font-weight: 600;
 }

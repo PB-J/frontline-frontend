@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import apiUrl from '../../apiConfig'
+import { Redirect, withRouter } from 'react-router-dom'
+import Picker from 'emoji-picker-react'
 
-const Message = ({ user, history }) => {
+const Message = ({ user }) => {
   const [message, setMessage] = useState({})
   const [messageId, setMessageId] = useState(null)
-  const [index, setIndex] = useState([])
   console.log('!!!', this.props)
-  console.log(index)
 
   const handleChange = event => {
     console.log(messageId)
@@ -20,11 +20,6 @@ const Message = ({ user, history }) => {
       return editedMessage
     })
   }
-
-  const formReset = () => {
-    document.getElementById('message').reset()
-  }
-
   const handleSubmit = (event) => {
     event.preventDefault()
 
@@ -38,23 +33,11 @@ const Message = ({ user, history }) => {
     })
       .then(res => setMessageId(res.data.message._id))
       .then(setMessage({}))
-      .then(() => formReset())
-      .then(() => {
-        return (
-          axios({
-            url: `${apiUrl}/`,
-            method: 'GET',
-            headers: {
-              'Authorization': `Token token=${user.token}`
-            }
-          })
-            .then(res => setIndex(res.data.messages))
-        )
-      })
   }
 
   return (
     <div>
+      {messageId && <Redirect to ={'/profile'}/>}
       <form onSubmit={handleSubmit} id="message" name="message">
         <p>Name:</p>
         <input name="name" onChange={handleChange} placeholder="Name"></input>
@@ -63,9 +46,10 @@ const Message = ({ user, history }) => {
         <input name="clinician" onChange={handleChange} placeholder="Clinician"></input>
         <input name="facility" onChange={handleChange} placeholder="Facilty"></input>
         <input name="state" onChange={handleChange} placeholder="Location"></input>
+        <Picker/>
         <button to='/' type="submit">Send</button>
       </form>
     </div>
   )
 }
-export default Message
+export default withRouter(Message)

@@ -26,7 +26,7 @@ const Index = ({ user }) => {
     />
   </div>)
   return (
-    <div className="index-container">{messageData}</div>
+    <div className="index-container">{messageData.reverse()}</div>
   )
 }
 

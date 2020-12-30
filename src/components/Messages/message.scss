@@ -2,9 +2,14 @@
 
 .create-message-title {
     width: 65%;
-    font-weight: bolder;
-    margin-right: 15px;
+    font-weight: bold;
+    margin-right: 10px;
 }
+
+h1 {
+    font-size: 2.5rem;
+}
+
 .create-message-container {
     margin-top: 25px;
     border: 2px solid black;
@@ -12,7 +17,7 @@
     padding: 50px;
     font-family: 'Spartan', sans-serif;
     box-shadow: 10px 10px 10px silver;
-    max-width: 930px;
+    max-width: 800px;
 }
 
 .create-message-add-optional-title {
@@ -22,11 +27,14 @@
 .create-message-optional {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    flex-wrap: wrap;
     padding-top: 15px;
 }
 
 .create-message-option {
+    display: flex;
+    justify-content: space-between;
+    min-width: 300px;
     padding: 10px;
 }
 
@@ -37,9 +45,15 @@
     padding-bottom: 20px;
 }
 
+.create-message-title-text {
+    align-self: center;
+    color: #576464;
+}
+
 .create-message-textarea {
     width: 90%;
 }
+
 .create-message-submit {
     background-color: #03838C;
     color: white;

@@ -24,34 +24,56 @@ const unauthenticatedOptions = (
   </Fragment>
 )
 
-const Header = ({ user, handleChange }) => (
-  <Navbar className="header-nav-bar" expand="md">
-    <div className="search-icon">
-      <img src={searchIcon}></img>
-      <Form inline>
-        <FormControl
-          onChange={handleChange}
-          type="text"
-          placeholder="Search"
-          className="nav-search-bar mr-sm-2"
-        />
-      </Form>
-    </div>
-    <div className="app-logo">
-      <a href="#">
-        <img src={appLogo} alt="Medi thanks logo"></img>
-      </a>
-    </div>
-    <Navbar.Toggle aria-controls="basic-navbar-nav" />
-    <Navbar.Collapse id="basic-navbar-nav">
-      <Nav className="ml-auto">
-        {user && (
-          <span className="navbar-text mr-2">Welcome, {user.email}</span>
-        )}
-        {user ? authenticatedOptions : unauthenticatedOptions}
-      </Nav>
-    </Navbar.Collapse>
-  </Navbar>
-)
+const Header = ({ user, handleChange }) => {
+  console.log('window.location.hash is:', window.location.hash)
+
+  const hideSearchBar = window.location.hash === '#/profile'
+
+  console.log('hide search bar is: ', hideSearchBar)
+
+  return (
+    <Navbar className="header-nav-bar" expand="md">
+      {!hideSearchBar ? (
+        <div className="search-bar-container">
+          <img src={searchIcon}></img>
+          <Form inline>
+            <FormControl
+              onChange={handleChange}
+              type="text"
+              placeholder="Search"
+              className="nav-search-bar mr-sm-2"
+            />
+          </Form>
+        </div>
+      ) : (
+        <div className="hide-search-bar" style={{ display: 'none' }}>
+          <img src={searchIcon}></img>
+          <Form inline>
+            <FormControl
+              onChange={handleChange}
+              type="text"
+              placeholder="Search"
+              className="mr-sm-2"
+            />
+          </Form>
+        </div>
+      )}
+      <div className="app-logo">
+        <a href="#">
+          <img src={appLogo} alt="Medi thanks logo"></img>
+        </a>
+      </div>
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse id="basic-navbar-nav">
+        <Nav className="ml-auto">
+          {user && (
+            <span className="navbar-text mr-2">Welcome, {user.email}</span>
+          )}
+          {user ? authenticatedOptions : unauthenticatedOptions}
+        </Nav>
+      </Navbar.Collapse>
+    </Navbar>
+  )
+}
 
 export default Header

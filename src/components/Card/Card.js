@@ -16,7 +16,6 @@ function Card({
   facility,
   date
 }) {
-  console.log('!!!', user)
   return (
     <div className="card-container">
       <div className="card-heading">
@@ -25,7 +24,8 @@ function Card({
           <BsThreeDotsVertical />
         </div>
       </div>
-      <h2 className="content">{content}</h2><br/>
+      <h2 className="content">{content}</h2>
+      <br />
       <h3 className="name">-{name}</h3>
       <p className="line">_________________________________</p>
       <p className="facility">#{facility}</p>

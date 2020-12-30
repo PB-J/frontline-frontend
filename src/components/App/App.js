@@ -25,7 +25,6 @@ class App extends Component {
 
   handleSearchInputChange = (event) => {
     this.setState({ searchValue: event.target.value })
-    console.log('search value is:', this.state.searchValue)
   }
 
   setUser = (user) => this.setState({ user })
@@ -41,7 +40,6 @@ class App extends Component {
   render() {
     const { msgAlerts, user, searchValue } = this.state
 
-    console.log('search value is:', searchValue)
     return (
       <Fragment>
         <Header user={user} handleChange={this.handleSearchInputChange} />

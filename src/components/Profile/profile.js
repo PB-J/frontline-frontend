@@ -4,7 +4,7 @@ import apiUrl from '../../apiConfig'
 import Card from '../Card/Card'
 import { Button, Modal } from 'react-bootstrap'
 
-function Profile ({ user, owner }) {
+function Profile({ user, owner }) {
   const [index, setIndex] = useState([])
   const [show, setShow] = useState(false)
   const [message, setMessage] = useState({})

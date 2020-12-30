@@ -4,7 +4,7 @@ import { Button } from 'react-bootstrap'
 import { BsThreeDotsVertical } from 'react-icons/bs'
 import moment from 'moment'
 
-function Card ({ owner, user, id, handleShow, handleDelete, content, name, clinician, facility, date }) {
+function Card({ owner, user, id, handleShow, handleDelete, content, name, clinician, facility, date }) {
   console.log('!!!', user)
   return (
     <div className="card-container">

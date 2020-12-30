@@ -15,7 +15,7 @@ const Index = ({ user }) => {
     }).then((res) => setIndex(res.data.messages))
   }, [])
 
-  const messageData = index.map(item => <div key={item.id}>
+  const messageData = index.map(item => <div key={item._id}>
     <Card
       owner={item.owner}
       name={item.name}

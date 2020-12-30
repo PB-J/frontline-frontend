@@ -8,7 +8,7 @@ import './message.scss'
 const Message = ({ user }) => {
   const [message, setMessage] = useState({ name: user.username })
   const [messageId, setMessageId] = useState(null)
-  console.log('!!!', this.props)
+  console.log('!!!', user)
 
   const handleCheck = event => {
     event.persist()
@@ -23,7 +23,7 @@ const Message = ({ user }) => {
 
   const handleChange = event => {
     event.persist()
-    console.log(message)
+    console.log('message', message)
     setMessage(prevMessage => {
       const updatedMessage = { [event.target.name]: event.target.value }
       const editedMessage = Object.assign({}, prevMessage, updatedMessage)

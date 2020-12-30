@@ -15,8 +15,6 @@ const Index = ({ user, searchValue }) => {
     }).then((res) => setIndex(res.data.messages))
   }, [])
 
-  console.log('index value is:', index)
-
   const filterData = index.filter((item) =>
     item.content.toLowerCase().includes(searchValue.toLowerCase())
   )
@@ -34,7 +32,12 @@ const Index = ({ user, searchValue }) => {
       />
     </div>
   ))
-  return <div className="index-container">{messageData.reverse()}</div>
+  return (
+    <div>
+      <h2>There have been {index.length} thanks!</h2>
+      <div className="index-container">
+        {messageData.reverse()}</div>
+    </div>)
 }
 
 export default Index

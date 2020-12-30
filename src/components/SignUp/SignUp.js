@@ -12,6 +12,7 @@ class SignUp extends Component {
     super()
 
     this.state = {
+      username: '',
       email: '',
       password: '',
       passwordConfirmation: ''
@@ -26,7 +27,7 @@ class SignUp extends Component {
     event.preventDefault()
     const { msgAlert } = this.props
     if (this.state.password.length < 3) {
-      this.setState({ email: '', password: '', passwordConfirmation: '' })
+      this.setState({ username: '', email: '', password: '', passwordConfirmation: '' })
       msgAlert({
         heading: 'Sign Up Failed with error: your password must be longer than 3 characters',
         message: messages.signUpFailure,
@@ -45,7 +46,7 @@ class SignUp extends Component {
         }))
         .then(() => history.push('/'))
         .catch(error => {
-          this.setState({ email: '', password: '', passwordConfirmation: '' })
+          this.setState({ username: '', email: '', password: '', passwordConfirmation: '' })
           msgAlert({
             heading: 'Sign Up Failed with error: ' + error.message,
             message: messages.signUpFailure,
@@ -56,13 +57,24 @@ class SignUp extends Component {
   }
 
   render () {
-    const { email, password, passwordConfirmation } = this.state
+    const { username, email, password, passwordConfirmation } = this.state
 
     return (
       <div className="row">
         <div className="col-sm-10 col-md-8 mx-auto mt-5">
           <h3>Sign Up</h3>
           <Form onSubmit={this.onSignUp}>
+            <Form.Group controlId="username">
+              <Form.Label>Display Name:</Form.Label>
+              <Form.Control
+                required
+                type="text"
+                name="username"
+                value={username}
+                placeholder="Enter display name"
+                onChange={this.handleChange}
+              />
+            </Form.Group>
             <Form.Group controlId="email">
               <Form.Label>Email address</Form.Label>
               <Form.Control

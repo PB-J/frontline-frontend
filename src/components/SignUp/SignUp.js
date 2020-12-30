@@ -86,13 +86,14 @@ class SignUp extends Component {
           </div>
           <Form onSubmit={this.onSignUp}>
             <Form.Group controlId="username">
-              <Form.Label>Username</Form.Label>
+
+              <Form.Label>Display Name:</Form.Label>
               <Form.Control
                 required
-                type="username"
+                type="text"
                 name="username"
                 value={username}
-                placeholder="Enter Username"
+                placeholder="Enter display name"
                 onChange={this.handleChange}
               />
             </Form.Group>

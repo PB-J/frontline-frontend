@@ -3,6 +3,7 @@
     padding: 20px 20px 0px 20px;
     margin: 1em;
     border-radius: 10px;
+    width: 300px;
 }
 .hover-container {
     display: flex;
@@ -10,22 +11,16 @@
     margin-right: auto;
     flex-direction: row;
     justify-content: center;
-    bottom: 160px;
-    left: 120px;
     background-color: lightgray;
     border-radius: 20px;
-    opacity: 0;
+    opacity: 1;
     width: 100px;
-  }
-
-  .hover-container:hover {
-    opacity: 0.7;
   }
 
   .hover-icon {
     font-size: large;
   }
-  
+
   .card-heading {
     display: flex;
     justify-content: space-between;
@@ -42,7 +37,7 @@
     float: right;
     color: #576464;
     font-size: 12px;
-    font-family: 'Spartan', sans-serif; 
+    font-family: 'Spartan', sans-serif;
 }
 
 .content {
@@ -50,6 +45,7 @@
     font-size: 20px;
     font-weight: 900;
     text-align: left;
+    word-wrap: break-word;
 }
 
 .name {
@@ -75,4 +71,20 @@
     color: #03838C;
     font-size: 16px;
     font-weight: 600;
+}
+.btn-icon {
+    background-color: #03838C;
+    padding: 0;
+    height: 25px;
+
+}
+
+.icon {
+    height: 20px;
+    margin-bottom: 5px;
+}
+
+.edit-icon {
+    font-size: 20px;
+    margin-bottom: 5px;
 }

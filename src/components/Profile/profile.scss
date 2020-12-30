@@ -1,5 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan&display=swap');
+
+.profile-container {
+    height: 80vh;
+    font-family: 'Spartan', sans-serif;
+}
+
 .profile-data {
-    margin-top: 35px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 30px;
     background-color: white
 }
 
+.profile-index-container {
+    display: flex;
+    flex-wrap: wrap;
+    overflow: scroll;
+    background-color: #03838C;
+    justify-content: center;
+}
+
+.link {
+    color: black;
+    text-decoration: underline;
+}
+.link:hover {
+    color: #03838C;
+    text-decoration: underline;
+}

@@ -34,7 +34,16 @@ const Index = ({ user, searchValue }) => {
   ))
   return (
     <div>
-      <h2>There have been {index.length} thanks!</h2>
+      <div className='index-header'>
+        <div className='thanks-box'>
+          {index.length}<br/>
+          Thanks Sent
+        </div>
+        <div className='index-header-text'>
+          <h2>The frontline needs us as much as we need them.</h2>
+          <h2>Thank them virtually with a personalized post!</h2>
+        </div>
+      </div>
       <div className="index-container">
         {messageData.reverse()}</div>
     </div>)

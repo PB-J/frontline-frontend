@@ -1,5 +1,25 @@
+.index-header {
+    display: flex;
+    justify-content: center;
+}
+.index-header-text {
+    text-align: center;
+    vertical-align: center;
+    padding-top: 25px;
+}
 .index-container {
     display: flex;
     flex-wrap: wrap;
+}
 
+.thanks-box {
+    font-weight: bolder;
+    position: relative;
+    margin: 50px;
+    height: 60px;
+    width: 150px;
+    background:white;
+    border-radius: 10px;
+    text-align: center;
+    background-color: lightgray;
 }

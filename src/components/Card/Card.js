@@ -18,8 +18,11 @@ function Card({
   facility,
   date
 }) {
+<<<<<<< HEAD
   const [show, setShow] = useState(false)
   const target = useRef(null)
+=======
+>>>>>>> styling changes
   return (
     <div className="card-container">
       <div className="card-heading">

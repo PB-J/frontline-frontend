@@ -7,8 +7,10 @@ import messages from '../AutoDismissAlert/messages'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 
+// import styling
+import './SignIn.scss'
 class SignIn extends Component {
-  constructor () {
+  constructor() {
     super()
 
     this.state = {
@@ -17,24 +19,27 @@ class SignIn extends Component {
     }
   }
 
-  handleChange = event => this.setState({
-    [event.target.name]: event.target.value
-  })
+  handleChange = (event) =>
+    this.setState({
+      [event.target.name]: event.target.value
+    })
 
-  onSignIn = event => {
+  onSignIn = (event) => {
     event.preventDefault()
 
     const { msgAlert, history, setUser } = this.props
 
     signIn(this.state)
-      .then(res => setUser(res.data.user))
-      .then(() => msgAlert({
-        heading: 'Sign In Success',
-        message: messages.signInSuccess,
-        variant: 'success'
-      }))
+      .then((res) => setUser(res.data.user))
+      .then(() =>
+        msgAlert({
+          heading: 'Sign In Success',
+          message: messages.signInSuccess,
+          variant: 'success'
+        })
+      )
       .then(() => history.push('/'))
-      .catch(error => {
+      .catch((error) => {
         this.setState({ email: '', password: '' })
         msgAlert({
           heading: 'Sign In Failed with error: ' + error.message,
@@ -44,13 +49,13 @@ class SignIn extends Component {
       })
   }
 
-  render () {
+  render() {
     const { email, password } = this.state
 
     return (
-      <div className="row">
-        <div className="col-sm-10 col-md-8 mx-auto mt-5">
-          <h3>Sign In</h3>
+      <div className="row sign-in-container">
+        <div className="col-sm-10 col-md-8 mx-auto mt-5 sign-in-form">
+          <h3 className="sign-in-title">Welcome Back!</h3>
           <Form onSubmit={this.onSignIn}>
             <Form.Group controlId="email">
               <Form.Label>Email address</Form.Label>
@@ -74,13 +79,14 @@ class SignIn extends Component {
                 onChange={this.handleChange}
               />
             </Form.Group>
-            <Button
-              variant="primary"
-              type="submit"
-            >
-              Submit
+            <Button className="submit-button" variant="primary" type="submit">
+              Log in
             </Button>
           </Form>
+          <div className="create-sign-up">
+            <p className="sign-up-link">New to MediThanks?</p>
+            <a href="#sign-up">Create An Account</a>
+          </div>
         </div>
       </div>
     )

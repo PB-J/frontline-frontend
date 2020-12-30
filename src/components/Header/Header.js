@@ -20,7 +20,6 @@ const authenticatedOptions = (
 
 const unauthenticatedOptions = (
   <Fragment>
-    <Nav.Link href="#sign-up">Sign Up</Nav.Link>
     <Nav.Link href="#sign-in">Sign In</Nav.Link>
   </Fragment>
 )
@@ -38,7 +37,9 @@ const Header = ({ user }) => (
       </Form>
     </div>
     <div className="app-logo">
-      <img src={appLogo} alt="Medi thanks logo"></img>
+      <a href="#">
+        <img src={appLogo} alt="Medi thanks logo"></img>
+      </a>
     </div>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">

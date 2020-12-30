@@ -2,7 +2,16 @@ import React from 'react'
 import './card.scss'
 import { Button } from 'react-bootstrap'
 
-function Card ({ id, handleShow, handleDelete, content, name, clinician, facility, date }) {
+function Card({
+  id,
+  handleShow,
+  handleDelete,
+  content,
+  name,
+  clinician,
+  facility,
+  date
+}) {
   return (
     <div className="card-container">
       <h2>{content}</h2>

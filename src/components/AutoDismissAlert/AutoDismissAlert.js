@@ -4,7 +4,7 @@ import Alert from 'react-bootstrap/Alert'
 import './AutoDismissAlert.scss'
 
 class AutoDismissAlert extends React.Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
 
     this.state = {
@@ -12,19 +12,19 @@ class AutoDismissAlert extends React.Component {
     }
   }
 
-  componentDidMount () {
+  componentDidMount() {
     this.timer = setInterval(() => {
       this.setState({ show: false })
     }, 5000)
   }
 
-  componentWillUnmount () {
+  componentWillUnmount() {
     clearInterval(this.timer)
   }
 
   handleClose = () => this.setState({ show: false })
 
-  render () {
+  render() {
     const { variant, heading, message } = this.props
     return (
       <Alert
@@ -34,9 +34,7 @@ class AutoDismissAlert extends React.Component {
         onClose={this.handleClose}
       >
         <div className="container">
-          <Alert.Heading>
-            {heading}
-          </Alert.Heading>
+          <Alert.Heading>{heading}</Alert.Heading>
           <p className="alert-body">{message}</p>
         </div>
       </Alert>

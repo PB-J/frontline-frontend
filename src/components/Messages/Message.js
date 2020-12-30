@@ -42,11 +42,11 @@ const Message = ({ user }) => {
       url: `${apiUrl}/messages/`,
       method: 'POST',
       headers: {
-        'Authorization': `Token token=${user.token}`
+        Authorization: `Token token=${user.token}`
       },
       data: { message }
     })
-      .then(res => setMessageId(res.data.message._id))
+      .then((res) => setMessageId(res.data.message._id))
       .then(setMessage({}))
   }
 

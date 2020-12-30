@@ -1,0 +1,43 @@
+.sign-up-container {
+  font-family: 'Spartan', sans-serif;
+  margin-top: 30px;
+
+  .sign-up-form {
+    align-items: center;
+    border: 2px solid black;
+    box-shadow: 2px 2px 2px silver;
+    padding: 30px;
+
+    .sign-up-message {
+      margin-bottom: 20px;
+      .sign-up-title {
+        font-size: 48px;
+        font-weight: 1000;
+      }
+      .sign-up-content {
+        font-size: 20px;
+      }
+    }
+
+    label {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .submit-button {
+      font-weight: 600;
+      background-color: #03838c;
+      margin-top: 5px;
+    }
+
+    .disclaimer {
+      margin-top: 10px;
+      a {
+        text-decoration: underline;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

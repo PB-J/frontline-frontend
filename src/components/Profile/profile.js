@@ -4,7 +4,7 @@ import apiUrl from '../../apiConfig'
 import Card from '../Card/Card'
 import { Button, Modal } from 'react-bootstrap'
 
-function Profile({ user }) {
+function Profile ({ user, owner }) {
   const [index, setIndex] = useState([])
   const [show, setShow] = useState(false)
   const [message, setMessage] = useState({})
@@ -84,20 +84,21 @@ function Profile({ user }) {
       }
     }).then((res) => setIndex(res.data.messages))
   }, [])
-  const messageData = index.map((item) => (
-    <div key={item._id}>
-      <Card
-        handleDelete={handleDelete}
-        name={item.name}
-        content={item.content}
-        facility={item.facility}
-        clinician={item.clinician}
-        date={item.createdAt}
-        id={item._id}
-        handleShow={handleShow}
-      />
-    </div>
-  ))
+  const messageData = index.map(item => <div key={item._id}>
+    <Card
+      owner={item.owner}
+      user={user}
+      handleDelete={handleDelete}
+      name={item.name}
+      content={item.content}
+      facility={item.facility}
+      clinician={item.clinician}
+      date={item.createdAt}
+      id={item._id}
+      handleShow={handleShow}
+    />
+
+  </div>)
   return (
     <div>
       <div className="index-container">{messageData.reverse()}</div>

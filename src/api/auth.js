@@ -1,12 +1,13 @@
 import apiUrl from '../apiConfig'
 import axios from 'axios'
 
-export const signUp = credentials => {
+export const signUp = (credentials) => {
   return axios({
     method: 'POST',
     url: apiUrl + '/sign-up',
     data: {
       credentials: {
+        username: credentials.username,
         email: credentials.email,
         password: credentials.password,
         password_confirmation: credentials.passwordConfirmation
@@ -15,7 +16,7 @@ export const signUp = credentials => {
   })
 }
 
-export const signIn = credentials => {
+export const signIn = (credentials) => {
   return axios({
     url: apiUrl + '/sign-in',
     method: 'POST',
@@ -28,12 +29,12 @@ export const signIn = credentials => {
   })
 }
 
-export const signOut = user => {
+export const signOut = (user) => {
   return axios({
     url: apiUrl + '/sign-out',
     method: 'DELETE',
     headers: {
-      'Authorization': `Token token=${user.token}`
+      Authorization: `Token token=${user.token}`
     }
   })
 }
@@ -43,7 +44,7 @@ export const changePassword = (passwords, user) => {
     url: apiUrl + '/change-password',
     method: 'PATCH',
     headers: {
-      'Authorization': `Token token=${user.token}`
+      Authorization: `Token token=${user.token}`
     },
     data: {
       passwords: {

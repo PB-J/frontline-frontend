@@ -5,3 +5,30 @@
     border-radius: 20px;
     box-shadow: 2px 2px 2px silver;
 }
+
+
+.hover-container {
+    display: flex;
+    position: relative;
+    margin-right: auto;
+    flex-direction: row;
+    justify-content: center;
+    bottom: 160px;
+    left: 120px;
+    background-color: lightgray;
+    border-radius: 20px;
+    opacity: 0;
+    width: 100px;
+  }
+
+  .hover-container:hover {
+    opacity: 0.7;
+  }
+
+  .hover-icon {
+    font-size: large;
+  }
+.card-heading {
+    display: flex;
+    justify-content: space-between;
+}

@@ -8,23 +8,25 @@ import './message.scss'
 const Message = ({ user }) => {
   const [message, setMessage] = useState({ name: user.username })
   const [messageId, setMessageId] = useState(null)
-  console.log('!!!', user)
 
-  const handleCheck = event => {
+  const handleCheck = (event) => {
     event.persist()
-    const value = event.target.name === 'name' && event.target.checked === true ? 'Anonymous' : user.username
+    const value =
+      event.target.name === 'name' && event.target.checked === true
+        ? 'Anonymous'
+        : user.username
     console.log(value)
-    setMessage(prevMessage => {
+    setMessage((prevMessage) => {
       const updatedMessage = { [event.target.name]: value }
       const editedMessage = Object.assign({}, prevMessage, updatedMessage)
       return editedMessage
     })
   }
 
-  const handleChange = event => {
+  const handleChange = (event) => {
     event.persist()
     console.log('message', message)
-    setMessage(prevMessage => {
+    setMessage((prevMessage) => {
       const updatedMessage = { [event.target.name]: event.target.value }
       const editedMessage = Object.assign({}, prevMessage, updatedMessage)
       return editedMessage
@@ -51,39 +53,62 @@ const Message = ({ user }) => {
   }
 
   return (
-    <div className='create-message-container'>
-      {messageId && <Redirect to ={'/profile'}/>}
-      <div className='create-message-title-row'>
-        <div className='create-message-title'>
+    <div className="create-message-container">
+      {messageId && <Redirect to={'/profile'} />}
+      <div className="create-message-title-row">
+        <div className="create-message-title">
           <h1>Write a Thank you</h1>
         </div>
-        <div className='create-message-title-text'>
+        <div className="create-message-title-text">
           <p>Tell frontline healthcare workers how much you appreciate them!</p>
         </div>
       </div>
       <form onSubmit={handleSubmit} id="message" name="message">
         <h3>Message:</h3>
-        <textarea className='create-message-textarea' name="content" onChange={handleChange} rows={5} placeholder=""></textarea>
+        <textarea
+          className="create-message-textarea"
+          name="content"
+          onChange={handleChange}
+          rows={5}
+          placeholder=""
+        ></textarea>
         <div>
-          <input type='checkbox' name='name' onClick={handleCheck} /> Post as anonymous.
-          <h5 className='create-message-add-optional-title'>Add to your post (optional)</h5>
-          <div className='create-message-optional'>
-            <div className='create-message-option'>
+          <input type="checkbox" name="name" onClick={handleCheck} /> Post as
+          anonymous.
+          <h5 className="create-message-add-optional-title">
+            Add to your post (optional)
+          </h5>
+          <div className="create-message-optional">
+            <div className="create-message-option">
               Clinician:
-              <input name="clinician" onChange={handleChange} placeholder="Clinician"/>
+              <input
+                name="clinician"
+                onChange={handleChange}
+                placeholder="Clinician"
+              />
             </div>
-            <div className='create-message-option'>
+            <div className="create-message-option">
               Facility:
-              <input name="facility" onChange={handleChange} placeholder="Facilty"/>
+              <input
+                name="facility"
+                onChange={handleChange}
+                placeholder="Facilty"
+              />
             </div>
-            <div className='create-message-option'>
+            <div className="create-message-option">
               State:
-              <input name="state" onChange={handleChange} placeholder="Location"/>
+              <input
+                name="state"
+                onChange={handleChange}
+                placeholder="Location"
+              />
             </div>
           </div>
         </div>
         {/* <Picker/> */}
-        <button to='/' type="submit" className='create-message-submit'>Submit Post</button>
+        <button to="/" type="submit" className="create-message-submit">
+          Submit Post
+        </button>
       </form>
     </div>
   )

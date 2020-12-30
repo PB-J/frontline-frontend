@@ -24,12 +24,13 @@ const unauthenticatedOptions = (
   </Fragment>
 )
 
-const Header = ({ user }) => (
+const Header = ({ user, handleChange }) => (
   <Navbar className="header-nav-bar" expand="md">
     <div className="search-icon">
       <img src={searchIcon}></img>
       <Form inline>
         <FormControl
+          onChange={handleChange}
           type="text"
           placeholder="Search"
           className="nav-search-bar mr-sm-2"

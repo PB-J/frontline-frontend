@@ -4,7 +4,18 @@ import { Button } from 'react-bootstrap'
 import { BsThreeDotsVertical } from 'react-icons/bs'
 import moment from 'moment'
 
-function Card({ owner, user, id, handleShow, handleDelete, content, name, clinician, facility, date }) {
+function Card({
+  owner,
+  user,
+  id,
+  handleShow,
+  handleDelete,
+  content,
+  name,
+  clinician,
+  facility,
+  date
+}) {
   console.log('!!!', user)
   return (
     <div className="card-container">
@@ -19,10 +30,21 @@ function Card({ owner, user, id, handleShow, handleDelete, content, name, clinic
       <p>{moment(date).format('MMMM Do YYYY, h:mm a')}</p>
       <p>{clinician}</p>
       <div className="hover-container">
-        {user && user._id === owner ? <Button id={id} variant="primary" onClick={handleShow}>E</Button> : ''}
-        {user && user._id === owner ? <Button name={id} variant="danger" onClick={handleDelete}>D</Button> : ''}
+        {user && user._id === owner ? (
+          <Button id={id} variant="primary" onClick={handleShow}>
+            E
+          </Button>
+        ) : (
+          ''
+        )}
+        {user && user._id === owner ? (
+          <Button name={id} variant="danger" onClick={handleDelete}>
+            D
+          </Button>
+        ) : (
+          ''
+        )}
       </div>
-
     </div>
   )
 }

@@ -14,3 +14,32 @@
     margin: 5px;
   }
 }
+
+.message-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 15px;
+  transition: transform .2s;
+}
+
+.message-link:hover {
+  transform: scale(1.1);
+}
+
+
+.message-icon {
+  font-size: 40px;
+  color: #03838C;
+}
+
+.search-bar-container {
+  display: flex;
+  img {
+    padding: 5px;
+  }
+}
+
+.app-logo {
+  align-self: center;
+}

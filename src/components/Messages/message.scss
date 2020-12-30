@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan&display=swap');
+
+.create-message-title {
+    width: 65%;
+    font-weight: bolder;
+    margin-right: 15px;
+}
+.create-message-container {
+    margin-top: 25px;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 50px;
+    font-family: 'Spartan', sans-serif;
+    box-shadow: 10px 10px 10px silver;
+    max-width: 930px;
+}
+
+.create-message-add-optional-title {
+    padding-top: 25px;
+}
+
+.create-message-optional {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 15px;
+}
+
+.create-message-option {
+    padding: 10px;
+}
+
+.create-message-title-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 20px;
+}
+
+.create-message-textarea {
+    width: 90%;
+}
+.create-message-submit {
+    background-color: #03838C;
+    color: white;
+    padding: 8px;
+    border-radius: 10px;
+    border: none;
+    font-weight: bolder;
+    margin-top: 10px;
+}

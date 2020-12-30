@@ -18,8 +18,14 @@ class App extends Component {
 
     this.state = {
       user: null,
+      searchValue: '',
       msgAlerts: []
     }
+  }
+
+  handleSearchInputChange = (event) => {
+    this.setState({ searchValue: event.target.value })
+    console.log('search value is:', this.state.searchValue)
   }
 
   setUser = (user) => this.setState({ user })
@@ -33,11 +39,12 @@ class App extends Component {
   }
 
   render() {
-    const { msgAlerts, user } = this.state
+    const { msgAlerts, user, searchValue } = this.state
 
+    console.log('search value is:', searchValue)
     return (
       <Fragment>
-        <Header user={user} />
+        <Header user={user} handleChange={this.handleSearchInputChange} />
         {msgAlerts.map((msgAlert, index) => (
           <AutoDismissAlert
             key={index}
@@ -59,7 +66,11 @@ class App extends Component {
               <SignIn msgAlert={this.msgAlert} setUser={this.setUser} />
             )}
           />
-          <Route exact path="/" render={() => <Index user={user} />} />
+          <Route
+            exact
+            path="/"
+            render={() => <Index user={user} searchValue={searchValue} />}
+          />
           <AuthenticatedRoute
             user={user}
             path="/sign-out"

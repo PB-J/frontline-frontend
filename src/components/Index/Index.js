@@ -4,7 +4,7 @@ import apiUrl from '../../apiConfig'
 import Card from '../Card/Card'
 import './index.scss'
 
-const Index = ({ user }) => {
+const Index = ({ user, searchValue }) => {
   console.log(user)
   const [index, setIndex] = useState([])
 
@@ -15,20 +15,26 @@ const Index = ({ user }) => {
     }).then((res) => setIndex(res.data.messages))
   }, [])
 
-  const messageData = index.map(item => <div key={item._id}>
-    <Card
-      owner={item.owner}
-      name={item.name}
-      content={item.content}
-      facility={item.facility}
-      clinician={item.clinician}
-      date={item.createdAt}
-      user={user}
-    />
-  </div>)
-  return (
-    <div className="index-container">{messageData.reverse()}</div>
+  console.log('index value is:', index)
+
+  const filterData = index.filter((item) =>
+    item.facility.toLowerCase().includes(searchValue.toLowerCase())
   )
+
+  const messageData = filterData.map((item) => (
+    <div key={item._id}>
+      <Card
+        owner={item.owner}
+        name={item.name}
+        content={item.content}
+        facility={item.facility}
+        clinician={item.clinician}
+        date={item.createdAt}
+        user={user}
+      />
+    </div>
+  ))
+  return <div className="index-container">{messageData.reverse()}</div>
 }
 
 export default Index

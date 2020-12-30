@@ -18,11 +18,8 @@ function Card({
   facility,
   date
 }) {
-<<<<<<< HEAD
   const [show, setShow] = useState(false)
   const target = useRef(null)
-=======
->>>>>>> styling changes
   return (
     <div className="card-container">
       <div className="card-heading">
@@ -32,9 +29,10 @@ function Card({
         </Button>
           : ''}
       </div>
-      <h2 className="content">{content}</h2><br/>
-      <h3 className="name">-{name}</h3>
-      <p className="line">_________________________________</p>
+      <div className='top-content'>
+        <h2 className="content">{content}</h2><br/>
+        <h3 className="name">-{name}</h3><br/>
+      </div>
       <p className="facility">#{facility}</p>
       <p className="clinician">#{clinician}</p>
       <div>

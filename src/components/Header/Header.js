@@ -20,10 +20,6 @@ const authenticatedOptions = (
       <MdPerson className="message-icon" />
       Profile
     </Nav.Link>
-    <Nav.Link href="#change-password">Change Password</Nav.Link>
-    <Nav.Link className="message-link" href="#sign-out">
-      Sign Out
-    </Nav.Link>
   </Fragment>
 )
 

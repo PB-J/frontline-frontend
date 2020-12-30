@@ -2,10 +2,12 @@
   display: flex !important;
   justify-content: space-between !important;
   font-family: 'Spartan', sans-serif;
+  background-color: white;
 }
 
 .navbar-collapse {
   flex-grow: unset;
+  background-color: white;
 }
 
 .search-icon {

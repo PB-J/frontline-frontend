@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 import apiUrl from '../../apiConfig'
 import Card from '../Card/Card'
 import { Button, Modal } from 'react-bootstrap'
+import './profile.scss'
 
 function Profile({ user, owner }) {
   const [index, setIndex] = useState([])
@@ -84,6 +86,7 @@ function Profile({ user, owner }) {
       }
     }).then((res) => setIndex(res.data.messages))
   }, [])
+
   const messageData = index.map(item => <div key={item._id}>
     <Card
       owner={item.owner}
@@ -100,9 +103,17 @@ function Profile({ user, owner }) {
 
   </div>)
   return (
-    <div>
-      <div className="index-container">{messageData.reverse()}</div>
-
+    <div className='profile-container'>
+      <div className='profile-data'>
+        <h2>{user.username}</h2>
+        <h3>{user.email}</h3>
+        <h2>Your sent cards ({index.length})</h2>
+        <Link className='link' to='/change-password'><p>Change Password</p></Link>
+        <Link className='link' to='/sign-out'><p>Sign Out</p></Link>
+      </div>
+      <div className="profile-index-container">
+        {messageData.reverse()}
+      </div>
       <Modal
         show={show}
         onHide={handleClose}

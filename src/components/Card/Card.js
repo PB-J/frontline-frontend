@@ -2,8 +2,8 @@ import React, { useState, useRef } from 'react'
 import './card.scss'
 import { Button, Overlay } from 'react-bootstrap'
 import { BsThreeDotsVertical } from 'react-icons/bs'
-import { FaEdit } from 'react-icons/fa'
-import { RiDeleteBin2Fill } from 'react-icons/ri'
+// import { FaEdit } from 'react-icons/fa'
+// import { RiDeleteBin2Fill } from 'react-icons/ri'
 import moment from 'moment'
 
 function Card({
@@ -49,14 +49,14 @@ function Card({
             >
               {user && user._id === owner ? (
                 <Button id={id} variant="primary" onClick={handleShow}>
-                  <FaEdit id={id} onClick={handleShow} />
+                  Edit?
                 </Button>
               ) : (
                 ''
               )}
               {user && user._id === owner ? (
                 <Button name={id} variant="danger" onClick={handleDelete}>
-                  <RiDeleteBin2Fill name={id} onClick={handleDelete} />
+                  Delete?
                 </Button>
               ) : (
                 ''

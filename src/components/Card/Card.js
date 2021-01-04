@@ -48,7 +48,7 @@ function Card({
               }}
             >
               {user && user._id === owner ? (
-                <Button id={id} variant="primary" onClick={handleShow}>
+                <Button id={id} variant="secondary" onClick={handleShow}>
                   Edit?
                 </Button>
               ) : (

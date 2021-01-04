@@ -13,13 +13,10 @@ function Profile({ user, owner }) {
   const [messageId, setMessageId] = useState(null)
 
   const handleChange = (event) => {
-    console.log(messageId)
     event.persist()
     setMessage((prevMessage) => {
       const updatedMessage = { [event.target.name]: event.target.value }
-      console.log(updatedMessage)
       const editedMessage = Object.assign({}, prevMessage, updatedMessage)
-      console.log(editedMessage)
       return editedMessage
     })
   }
@@ -58,7 +55,6 @@ function Profile({ user, owner }) {
   }
 
   const handleDelete = (event) => {
-    console.log(event.target.name)
     axios({
       url: `${apiUrl}/messages/${event.target.name}`,
       method: 'DELETE',
@@ -87,33 +83,36 @@ function Profile({ user, owner }) {
     }).then((res) => setIndex(res.data.messages))
   }, [])
 
-  const messageData = index.map(item => <div key={item._id}>
-    <Card
-      owner={item.owner}
-      user={user}
-      handleDelete={handleDelete}
-      name={item.name}
-      content={item.content}
-      facility={item.facility}
-      clinician={item.clinician}
-      date={item.createdAt}
-      id={item._id}
-      handleShow={handleShow}
-    />
-
-  </div>)
+  const messageData = index.map((item) => (
+    <div key={item._id}>
+      <Card
+        owner={item.owner}
+        user={user}
+        handleDelete={handleDelete}
+        name={item.name}
+        content={item.content}
+        facility={item.facility}
+        clinician={item.clinician}
+        date={item.createdAt}
+        id={item._id}
+        handleShow={handleShow}
+      />
+    </div>
+  ))
   return (
-    <div className='profile-container'>
-      <div className='profile-data'>
+    <div className="profile-container">
+      <div className="profile-data">
         <h2>{user.username}</h2>
         <h3>{user.email}</h3>
         <h2>Your sent cards ({index.length})</h2>
-        <Link className='link' to='/change-password'><p>Change Password</p></Link>
-        <Link className='link' to='/sign-out'><p>Sign Out</p></Link>
+        <Link className="link" to="/change-password">
+          <p>Change Password</p>
+        </Link>
+        <Link className="link" to="/sign-out">
+          <p>Sign Out</p>
+        </Link>
       </div>
-      <div className="profile-index-container">
-        {messageData.reverse()}
-      </div>
+      <div className="profile-index-container">{messageData.reverse()}</div>
       <Modal
         show={show}
         onHide={handleClose}

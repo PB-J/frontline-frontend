@@ -16,7 +16,6 @@ const Message = ({ user }) => {
       event.target.name === 'name' && event.target.checked === true
         ? 'Anonymous'
         : user.username
-    console.log(value)
     setMessage((prevMessage) => {
       const updatedMessage = { [event.target.name]: value }
       const editedMessage = Object.assign({}, prevMessage, updatedMessage)
@@ -26,7 +25,6 @@ const Message = ({ user }) => {
 
   const handleChange = (event) => {
     event.persist()
-    console.log('message', message)
     setMessage((prevMessage) => {
       const updatedMessage = { [event.target.name]: event.target.value }
       const editedMessage = Object.assign({}, prevMessage, updatedMessage)

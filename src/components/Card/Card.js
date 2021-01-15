@@ -29,7 +29,7 @@ function Card({
         </Button>
           : ''}
       </div>
-      <div className='top-content'>
+      <div className={facility || clinician ? 'top-content' : ''} >
         <h2 className="content">{content}</h2><br/>
         <h3 className="name">-{name}</h3><br/>
       </div>

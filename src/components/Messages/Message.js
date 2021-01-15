@@ -5,11 +5,13 @@ import { Redirect, withRouter } from 'react-router-dom'
 // import Picker from 'emoji-picker-react'
 // import Col from 'react-bootstrap/Col'
 import './message.scss'
+import EmojiTextarea from '../Emoji/Emoji'
 
 const Message = ({ user }) => {
   const [message, setMessage] = useState({ name: user.username })
   const [messageId, setMessageId] = useState(null)
-
+  const [text, setText] = useState('')
+  console.log(text)
   const handleCheck = (event) => {
     event.persist()
     const value =
@@ -22,7 +24,13 @@ const Message = ({ user }) => {
       return editedMessage
     })
   }
-
+  const handleContentChange = (text) => {
+    setMessage((prevMessage) => {
+      const updatedMessage = { content: text }
+      const editedMessage = Object.assign({}, prevMessage, updatedMessage)
+      return editedMessage
+    })
+  }
   const handleChange = (event) => {
     event.persist()
     setMessage((prevMessage) => {
@@ -64,13 +72,14 @@ const Message = ({ user }) => {
       </div>
       <form onSubmit={handleSubmit} id="message" name="message">
         <h3>Message:</h3>
-        <textarea
+        <EmojiTextarea
+          setText= {setText}
           className="create-message-textarea"
           name="content"
-          onChange={handleChange}
           rows={5}
           placeholder=""
-        ></textarea>
+          handleChange = {handleContentChange}
+        />
         <div>
           <input type="checkbox" name="name" onClick={handleCheck} /> Post as
           anonymous.

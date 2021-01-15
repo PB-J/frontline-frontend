@@ -29,7 +29,7 @@ class SignUp extends Component {
   onSignUp = (event) => {
     event.preventDefault()
     const { msgAlert } = this.props
-    if (this.state.password.length < 3) {
+    if (this.state.password.length > 4) {
       this.setState({
         username: '',
         email: '',

@@ -5,7 +5,7 @@ import './emoji.scss'
 
 const EmojiTextarea = ({ handleChange, setText }) => {
   const [comment, setComment] = useState('')
-  const [showEmojis, setShowEmojis] = useState(true)
+  const [showEmojis, setShowEmojis] = useState(false)
 
   const handleText = (e) => {
     const text = e.target.value

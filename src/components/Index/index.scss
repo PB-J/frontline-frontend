@@ -5,11 +5,12 @@
 .index-header-text {
     text-align: center;
     vertical-align: center;
-    padding-top: 25px;
+    padding-top: 35px;
 }
 .index-container {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .thanks-box {

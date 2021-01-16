@@ -62,6 +62,7 @@ function Profile({ user, owner }) {
           Authorization: `Token token=${user.token}`
         }
       }).then((res) => setIndex(res.data.messages))
+        .then(() => setShow(false))
     })
   }
 
@@ -74,6 +75,7 @@ function Profile({ user, owner }) {
       },
       data: { message }
     }).then(() => {
+      console.log('Successfully Deleted')
       return axios({
         url: `${apiUrl}/profile/`,
         method: 'GET',

@@ -61,6 +61,13 @@ function Card({
               ) : (
                 ''
               )}
+              {user && user._id === owner ? (
+                <Button name='cancel' variant="secondary" onClick={() => setShow(false)}>
+                  Cancel
+                </Button>
+              ) : (
+                ''
+              )}
             </div>
           )}
         </Overlay>

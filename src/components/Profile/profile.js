@@ -13,6 +13,7 @@ function Profile({ user, owner }) {
   const [message, setMessage] = useState({})
   const [messageId, setMessageId] = useState(null)
   const [text, setText] = useState('')
+  const [editDeleteShow, setEditDeleteShow] = useState(false)
   console.log(text)
   const handleContentChange = (text) => {
     setMessage((prevMessage) => {
@@ -63,6 +64,7 @@ function Profile({ user, owner }) {
         }
       }).then((res) => setIndex(res.data.messages))
         .then(() => setShow(false))
+        .then(() => setEditDeleteShow(false))
     })
   }
 
@@ -109,6 +111,7 @@ function Profile({ user, owner }) {
         date={item.createdAt}
         id={item._id}
         handleShow={handleShow}
+        setEditDeleteShow={editDeleteShow}
       />
     </div>
   ))

@@ -3,7 +3,7 @@ import Smiley from './icon-emotion-happy'
 import Emojis from './Emojis'
 import './emoji.scss'
 
-const EmojiTextarea = ({ handleChange, setText }) => {
+const EmojiTextarea = ({ handleChange, setText, editValue }) => {
   const [comment, setComment] = useState('')
   const [showEmojis, setShowEmojis] = useState(false)
 
@@ -30,7 +30,7 @@ const EmojiTextarea = ({ handleChange, setText }) => {
   }
   return (
     <div className = 'Emoji-Textarea'>
-      <textarea onChange = {handleText} value = {comment} name='content'></textarea>
+      <textarea onChange = {handleText} value = {editValue} name='content'></textarea>
       <div className = 'Emoji'>
         { showEmojis
           ? <div className = 'Emoji-Grid'>

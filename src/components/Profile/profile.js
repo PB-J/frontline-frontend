@@ -3,6 +3,7 @@ import axios from 'axios'
 import { Link } from 'react-router-dom'
 import apiUrl from '../../apiConfig'
 import Card from '../Card/Card'
+import EmojiTextarea from '../Emoji/Emoji'
 import { Button, Modal } from 'react-bootstrap'
 import './profile.scss'
 
@@ -11,6 +12,15 @@ function Profile({ user, owner }) {
   const [show, setShow] = useState(false)
   const [message, setMessage] = useState({})
   const [messageId, setMessageId] = useState(null)
+  const [text, setText] = useState('')
+  console.log(text)
+  const handleContentChange = (text) => {
+    setMessage((prevMessage) => {
+      const updatedMessage = { content: text }
+      const editedMessage = Object.assign({}, prevMessage, updatedMessage)
+      return editedMessage
+    })
+  }
 
   const handleChange = (event) => {
     event.persist()
@@ -32,6 +42,7 @@ function Profile({ user, owner }) {
         Authorization: `Token token=${user.token}`
       }
     }).then((res) => setMessage(res.data.message))
+      .then(() => setText(message.content))
   }
 
   const handleSubmit = (event) => {
@@ -132,14 +143,15 @@ function Profile({ user, owner }) {
               placeholder="Name"
             ></input>
             <p>Message:</p>
-            <textarea
-              onChange={handleChange}
-              value={message.content}
+            <EmojiTextarea
+              setText= {setText}
+              className="create-message-textarea"
               name="content"
-              cols={50}
-              rows={5}
+              rows={3}
               placeholder=""
-            ></textarea>
+              editValue= {message.content}
+              handleChange = {handleContentChange}
+            />
             <input
               onChange={handleChange}
               value={message.clinician}
@@ -158,9 +170,9 @@ function Profile({ user, owner }) {
               name="state"
               placeholder="Location"
             ></input>
-            <button onClick={handleClose} type="submit">
+            <Button className='edit-send' variant="secondary" onClick={handleClose} type="submit">
               Send
-            </button>
+            </Button>
           </form>
         </Modal.Body>
         <Modal.Footer>

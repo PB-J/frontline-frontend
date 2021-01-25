@@ -9,15 +9,6 @@ const EmojiTextarea = ({ handleChange, setText, editValue }) => {
 
   const handleText = (e) => {
     const text = e.target.value
-    // const lastChar = text[text.length - 1]
-    // if (lastChar === ' ') {
-    //   const array = text.split(' ')
-    //   const lastWord = array[array.length - 2].toLowerCase()
-    //   const emojis = Emojis.filter(emoji => emoji.tags_ES.indexOf(lastWord) !== -1 || emoji.tags_EN.indexOf(lastWord) !== -1).slice(0, 50)
-    //   setEmojis(emojis)
-    //   console.log(emojis)
-    // }
-    // setEmojis([...Emojis])
     setComment(text)
     setText(text)
     handleChange(text)
@@ -27,6 +18,8 @@ const EmojiTextarea = ({ handleChange, setText, editValue }) => {
     setComment(text)
     setText(text)
     handleChange(text)
+    console.log(comment)
+    console.log(text)
   }
   return (
     <div className = 'Emoji-Textarea'>
@@ -34,7 +27,7 @@ const EmojiTextarea = ({ handleChange, setText, editValue }) => {
       <div className = 'Emoji'>
         { showEmojis
           ? <div className = 'Emoji-Grid'>
-            {Emojis.map((value, key) => <span key = {key} onClick = {() => handleEmoji(value.symbol)}>{value.symbol}</span>)}
+            {Emojis.map((value, key) => <span key = {key} onClick={() => handleEmoji(value.symbol)}>{value.symbol}</span>)}
           </div>
           : null
         }

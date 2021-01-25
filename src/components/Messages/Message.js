@@ -79,6 +79,7 @@ const Message = ({ user, msgAlert }) => {
           name="content"
           rows={5}
           placeholder=""
+          editValue= {message.content}
           handleChange = {handleContentChange}
         />
         <div>

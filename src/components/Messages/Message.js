@@ -1,16 +1,19 @@
+/* eslint-disable no-throw-literal */
 import React, { useState } from 'react'
 import axios from 'axios'
 import apiUrl from '../../apiConfig'
 import { Redirect, withRouter } from 'react-router-dom'
+
 // import Picker from 'emoji-picker-react'
 // import Col from 'react-bootstrap/Col'
 import './message.scss'
 import EmojiTextarea from '../Emoji/Emoji'
 
-const Message = ({ user }) => {
+const Message = ({ user, msgAlert }) => {
   const [message, setMessage] = useState({ name: user.username })
   const [messageId, setMessageId] = useState(null)
   const [text, setText] = useState('')
+  const badWords = ['bitch', 'fuck']
   console.log(text)
   const handleCheck = (event) => {
     event.persist()
@@ -41,22 +44,20 @@ const Message = ({ user }) => {
   }
   const handleSubmit = (event) => {
     event.preventDefault()
-    // const value = event.target.type === 'checkbox' && event.target.value === true ? 'Anonymous' : 'other'
-    // setMessage(prevMessage => {
-    //   const updatedMessage = { [event.target.name]: event.target.value }
-    //   const editedMessage = Object.assign({}, prevMessage, updatedMessage)
-    //   return editedMessage
-    // })
-    axios({
-      url: `${apiUrl}/messages/`,
-      method: 'POST',
-      headers: {
-        Authorization: `Token token=${user.token}`
-      },
-      data: { message }
-    })
-      .then((res) => setMessageId(res.data.message._id))
-      .then(setMessage({}))
+    if (badWords.some(word => message.content.toLowerCase().includes(word))) {
+      alert('We flagged your message as having inappropriate content.')
+    } else {
+      axios({
+        url: `${apiUrl}/messages/`,
+        method: 'POST',
+        headers: {
+          Authorization: `Token token=${user.token}`
+        },
+        data: { message }
+      })
+        .then((res) => setMessageId(res.data.message._id))
+        .then(setMessage({}))
+    }
   }
 
   return (

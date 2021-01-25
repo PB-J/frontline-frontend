@@ -28,48 +28,32 @@ class SignUp extends Component {
 
   onSignUp = (event) => {
     event.preventDefault()
-    const { msgAlert } = this.props
-    if (this.state.password.length > 4) {
-      this.setState({
-        username: '',
-        email: '',
-        password: '',
-        passwordConfirmation: ''
-      })
-      msgAlert({
-        heading:
-          'Sign Up Failed with error: your password must be longer than 3 characters',
-        message: messages.signUpFailure,
-        variant: 'danger'
-      })
-    } else {
-      const { msgAlert, history, setUser } = this.props
+    const { msgAlert, history, setUser } = this.props
 
-      signUp(this.state)
-        .then(() => signIn(this.state))
-        .then((res) => setUser(res.data.user))
-        .then(() =>
-          msgAlert({
-            heading: 'Sign Up Success',
-            message: messages.signUpSuccess,
-            variant: 'success'
-          })
-        )
-        .then(() => history.push('/'))
-        .catch((error) => {
-          this.setState({
-            username: '',
-            email: '',
-            password: '',
-            passwordConfirmation: ''
-          })
-          msgAlert({
-            heading: 'Sign Up Failed with error: ' + error.message,
-            message: messages.signUpFailure,
-            variant: 'danger'
-          })
+    signUp(this.state)
+      .then(() => signIn(this.state))
+      .then((res) => setUser(res.data.user))
+      .then(() =>
+        msgAlert({
+          heading: 'Sign Up Success',
+          message: messages.signUpSuccess,
+          variant: 'success'
         })
-    }
+      )
+      .then(() => history.push('/'))
+      .catch((error) => {
+        this.setState({
+          username: '',
+          email: '',
+          password: '',
+          passwordConfirmation: ''
+        })
+        msgAlert({
+          heading: 'Sign Up Failed with error: ' + error.message,
+          message: messages.signUpFailure,
+          variant: 'danger'
+        })
+      })
   }
 
   render() {

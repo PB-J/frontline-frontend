@@ -14,7 +14,7 @@ const authenticatedOptions = (
   <Fragment>
     <Nav.Link className="message-link" href="#message">
       <MdAddCircle className="message-icon" />
-      Message
+      Add Post
     </Nav.Link>
     <Nav.Link className="message-link" href="#profile">
       <MdPerson className="message-icon" />

@@ -138,7 +138,7 @@ function Profile({ user, owner }) {
         <Modal.Header closeButton>
           <Modal.Title>Update</Modal.Title>
         </Modal.Header>
-        <Modal.Body>
+        <Modal.Body className='create-message-container'>
           <form onSubmit={handleSubmit} id="message" name="message">
             <p>Name:</p>
             <input

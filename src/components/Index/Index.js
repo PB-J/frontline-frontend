@@ -14,8 +14,11 @@ const Index = ({ user, searchValue }) => {
     }).then((res) => setIndex(res.data.messages))
   }, [])
 
-  const filterData = index.filter((item) =>
-    item.content.toLowerCase().includes(searchValue.toLowerCase())
+  const searchValueLowerCase = searchValue.toLowerCase()
+
+  const filterData = index.filter((item) => {
+    return item.content.toLowerCase().includes(searchValueLowerCase)
+  }
   )
 
   const messageData = filterData.map((item) => (

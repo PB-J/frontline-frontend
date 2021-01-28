@@ -30,13 +30,13 @@ function Card({
         </Button>
           : ''}
       </div>
-      <div className={facility || clinician ? 'top-content' : ''} >
+      <div className={facility !== ' ' || clinician !== ' ' || state !== ' ' ? 'top-content' : ''} >
         <h2 className="content">{content}</h2><br/>
         <h3 className="name">-{name}</h3><br/>
       </div>
-      {facility ? <p className="facility">#{facility}</p> : ''}
-      {clinician ? <p className="clinician">#{clinician}</p> : ''}
-      {state ? <p className="state">#{state}</p> : ''}
+      {facility !== ' ' ? <p className="facility">#{facility}</p> : ''}
+      {clinician !== ' ' ? <p className="clinician">#{clinician}</p> : ''}
+      {state !== ' ' ? <p className="state">#{state}</p> : ''}
       <div>
         <Overlay target={target.current} show={show} placement="right">
           {({ placement, arrowProps, show: _show, popper, ...props }) => (

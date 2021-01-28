@@ -16,7 +16,8 @@ function Card({
   name,
   clinician,
   facility,
-  date
+  date,
+  state
 }) {
   const [show, setShow] = useState(false)
   const target = useRef(null)
@@ -35,6 +36,7 @@ function Card({
       </div>
       {facility ? <p className="facility">#{facility}</p> : ''}
       {clinician ? <p className="clinician">#{clinician}</p> : ''}
+      {state ? <p className="state">#{state}</p> : ''}
       <div>
         <Overlay target={target.current} show={show} placement="right">
           {({ placement, arrowProps, show: _show, popper, ...props }) => (

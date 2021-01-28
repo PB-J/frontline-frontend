@@ -17,7 +17,7 @@ const Index = ({ user, searchValue }) => {
   const searchValueLowerCase = searchValue.toLowerCase()
 
   const filterData = index.filter((item) =>
-    item.content.toLowerCase().includes(searchValueLowerCase)
+    item.content.toLowerCase().includes(searchValueLowerCase) || item.facility.toLowerCase().includes(searchValueLowerCase) || item.name.toLowerCase().includes(searchValueLowerCase) || item.clinician.toLowerCase().includes(searchValueLowerCase) || item.state.toLowerCase().includes(searchValueLowerCase)
   )
 
   const messageData = filterData.map((item) => (
@@ -28,6 +28,7 @@ const Index = ({ user, searchValue }) => {
         content={item.content}
         facility={item.facility}
         clinician={item.clinician}
+        state={item.state}
         date={item.createdAt}
         user={user}
       />

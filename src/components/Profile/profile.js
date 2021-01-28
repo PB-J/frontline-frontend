@@ -107,6 +107,7 @@ function Profile({ user, owner }) {
         name={item.name}
         content={item.content}
         facility={item.facility}
+        state={item.state}
         clinician={item.clinician}
         date={item.createdAt}
         id={item._id}

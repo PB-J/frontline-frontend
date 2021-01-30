@@ -21,14 +21,38 @@ Through a digital forum for public 'thank you cards'
 
 ## Deployment
 
-Before deploying, you first need to make sure the `homepage` key in your
-`package.json` is pointing to the correct value. It should be the url of your
-deployed application.
+```
+npm run build
+npm run deploy
+```
 
-To deploy you should first make sure you are on the `master` branch with a
-clean working directory, then you can run `npm run deploy` and wait to see if
-it runs successfully.
+## Troubleshooting
 
+"gyp: No Xcode or CLT version detected!"
 
+```
+sudo xcode-select --reset
+```
 
+or
 
+```
+xcode-select --print-path
+sudo rm -r -f /Library/Developer/CommandLineTools
+xcode-select --install
+```
+
+"nvm command not found"
+
+add to ~/.bash_profile or ~/.zshrc
+
+```
+[[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh  # This loads NVM
+```
+
+restart nvm
+
+```
+source ~/.zshrc
+source ~/.bash_profile
+```

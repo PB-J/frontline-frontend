@@ -13,7 +13,6 @@ const Message = ({ user, msgAlert }) => {
   const [message, setMessage] = useState({ name: user.username })
   const [messageId, setMessageId] = useState(null)
   const [text, setText] = useState('')
-  const badWords = ['bitch', 'fuck']
   console.log(text)
   const handleCheck = (event) => {
     event.persist()
@@ -44,20 +43,16 @@ const Message = ({ user, msgAlert }) => {
   }
   const handleSubmit = (event) => {
     event.preventDefault()
-    if (badWords.some(word => message.content.toLowerCase().includes(word))) {
-      alert('We flagged your message as having inappropriate content.')
-    } else {
-      axios({
-        url: `${apiUrl}/messages/`,
-        method: 'POST',
-        headers: {
-          Authorization: `Token token=${user.token}`
-        },
-        data: { message }
-      })
-        .then((res) => setMessageId(res.data.message._id))
-        .then(setMessage({}))
-    }
+    axios({
+      url: `${apiUrl}/messages/`,
+      method: 'POST',
+      headers: {
+        Authorization: `Token token=${user.token}`
+      },
+      data: { message }
+    })
+      .then((res) => setMessageId(res.data.message._id))
+      .then(setMessage({}))
   }
 
   return (

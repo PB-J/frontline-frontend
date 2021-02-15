@@ -25,18 +25,33 @@ function Card({
     <div className="card-container">
       <div className="card-heading">
         <p className="dates">{moment(date).format('MMMM Do YYYY, h:mm a')}</p>
-        {window.location.hash.match('#/profile') ? <Button className="btn-icon" ref={target} onClick={() => setShow(!show)}>
-          <BsThreeDotsVertical className="icon" />
-        </Button>
-          : ''}
+        {window.location.hash.match('#/profile') ? (
+          <Button
+            className="btn-icon"
+            ref={target}
+            onClick={() => setShow(!show)}
+          >
+            <BsThreeDotsVertical className="icon" />
+          </Button>
+        ) : (
+          ''
+        )}
       </div>
-      <div className={facility !== ' ' || clinician !== ' ' || state !== ' ' ? 'top-content' : ''} >
-        <h2 className="content">{content}</h2><br/>
-        <h3 className="name">-{name}</h3><br/>
+      <div
+        className={
+          facility !== ' ' || clinician !== ' ' || state !== ' '
+            ? 'top-content'
+            : ''
+        }
+      >
+        <h2 className="content">{content}</h2>
+        <br />
+        <h3 className="name">-{name}</h3>
+        <br />
       </div>
-      {facility !== ' ' ? <p className="facility">#{facility}</p> : ''}
-      {clinician !== ' ' ? <p className="clinician">#{clinician}</p> : ''}
-      {state !== ' ' ? <p className="state">#{state}</p> : ''}
+      {facility !== ' ' ? <div className="facility">#{facility}</div> : ''}
+      {clinician !== ' ' ? <div className="clinician">#{clinician}</div> : ''}
+      {state !== ' ' ? <div className="state">#{state}</div> : ''}
       <div>
         <Overlay target={target.current} show={show} placement="right">
           {({ placement, arrowProps, show: _show, popper, ...props }) => (
@@ -64,7 +79,11 @@ function Card({
                 ''
               )}
               {user && user._id === owner ? (
-                <Button name='cancel' variant="secondary" onClick={() => setShow(false)}>
+                <Button
+                  name="cancel"
+                  variant="secondary"
+                  onClick={() => setShow(false)}
+                >
                   Cancel
                 </Button>
               ) : (
@@ -75,7 +94,6 @@ function Card({
         </Overlay>
       </div>
     </div>
-
   )
 }
 

@@ -1,26 +1,21 @@
 .index-header {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 .index-header-text {
-    text-align: center;
-    vertical-align: center;
-    padding-top: 35px;
+  text-align: center;
+  vertical-align: center;
+  padding-top: 35px;
 }
 .index-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .thanks-box {
-    font-weight: bolder;
-    margin: 50px;
-    height: 5rem;
-    width: 150px;
-    background:white;
-    border-radius: 10px;
-    background-color: lightgray;
-    text-align: center;
-    line-height: 25px;
+  font-weight: bolder;
+  margin: 50px;
+  border-bottom: #03838c solid 3px;
+  text-align: center;
 }

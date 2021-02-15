@@ -35,7 +35,7 @@ const Header = ({ user, handleChange }) => {
     <Navbar className="header-nav-bar" expand="md">
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="ml-auto">
+        <Nav className="ml-auto auth-link">
           {user ? authenticatedOptions : unauthenticatedOptions}
         </Nav>
       </Navbar.Collapse>

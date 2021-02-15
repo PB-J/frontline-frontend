@@ -49,17 +49,17 @@ function Card({
         <h3 className="name">-{name}</h3>
         <br />
       </div>
-      {facility !== 'not provided' || facility !== ' ' ? (
+      {facility !== 'not provided' || facility !== '' ? (
         <div className="facility">#{facility}</div>
       ) : (
         ''
       )}
-      {clinician !== ' ' || clinician !== 'not provided' ? (
+      {clinician !== '' || clinician !== 'not provided' ? (
         <div className="clinician">#{clinician}</div>
       ) : (
         ''
       )}
-      {state !== ' ' ? <div className="state">#{state}</div> : ''}
+      {state !== '' ? <div className="state">#{state}</div> : ''}
       <div>
         <Overlay target={target.current} show={show} placement="right">
           {({ placement, arrowProps, show: _show, popper, ...props }) => (

@@ -1,66 +1,65 @@
 @import url('https://fonts.googleapis.com/css2?family=Spartan&display=swap');
 
 .create-message-title {
-    width: 65%;
-    font-weight: bold;
-    margin-right: 10px;
+  width: 65%;
+  font-weight: bold;
+  margin-right: 10px;
 }
 
 h1 {
-    font-size: 2.5rem;
+  font-size: 2.5rem;
 }
 
 .create-message-container {
-    margin-top: 25px;
-    border: 2px solid black;
-    border-radius: 10px;
-    padding: 50px;
-    font-family: 'Spartan', sans-serif;
-    box-shadow: 10px 10px 10px silver;
-    max-width: 800px;
-    background-color: white;
+  margin-top: 25px;
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 50px;
+  font-family: 'Spartan', sans-serif;
+  max-width: 800px;
+  background-color: white;
 }
 
 .create-message-add-optional-title {
-    padding-top: 25px;
+  padding-top: 25px;
 }
 
 .create-message-optional {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    padding-top: 15px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-top: 15px;
 }
 
 .create-message-option {
-    display: flex;
-    justify-content: space-between;
-    min-width: 300px;
-    padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  min-width: 300px;
+  padding: 10px;
 }
 
 .create-message-title-row {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: 20px;
 }
 
 .create-message-title-text {
-    align-self: center;
-    color: #576464;
+  align-self: center;
+  color: #576464;
 }
 
 .create-message-textarea {
-    width: 90%;
+  width: 90%;
 }
 
 .create-message-submit {
-    background-color: #03838C;
-    color: white;
-    padding: 8px;
-    border-radius: 10px;
-    border: none;
-    font-weight: bolder;
-    margin-top: 10px;
+  background-color: #03838c;
+  color: white;
+  padding: 8px;
+  border-radius: 10px;
+  border: none;
+  font-weight: bolder;
+  margin-top: 10px;
 }

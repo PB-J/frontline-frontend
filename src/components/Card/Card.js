@@ -24,7 +24,7 @@ function Card({
   return (
     <div className="card-container">
       <div className="card-heading">
-        <p className="dates">{moment(date).format('MMMM Do YYYY, h:mm a')}</p>
+        <p className="dates">{moment(date).format('MM/DD/YYYY h:mma')}</p>
         {window.location.hash.match('#/profile') ? (
           <Button
             className="btn-icon"
@@ -49,8 +49,16 @@ function Card({
         <h3 className="name">-{name}</h3>
         <br />
       </div>
-      {facility !== ' ' ? <div className="facility">#{facility}</div> : ''}
-      {clinician !== ' ' ? <div className="clinician">#{clinician}</div> : ''}
+      {facility !== 'not provided' || facility !== ' ' ? (
+        <div className="facility">#{facility}</div>
+      ) : (
+        ''
+      )}
+      {clinician !== ' ' || clinician !== 'not provided' ? (
+        <div className="clinician">#{clinician}</div>
+      ) : (
+        ''
+      )}
       {state !== ' ' ? <div className="state">#{state}</div> : ''}
       <div>
         <Overlay target={target.current} show={show} placement="right">

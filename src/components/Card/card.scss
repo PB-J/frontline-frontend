@@ -32,7 +32,7 @@
 
 .card-heading {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 
 .card-container {
@@ -45,7 +45,7 @@
 .dates {
   float: right;
   color: #576464;
-  font-size: 12px;
+  font-size: 10px;
   font-family: 'Spartan', sans-serif;
 }
 

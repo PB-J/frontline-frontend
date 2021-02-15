@@ -16,8 +16,13 @@ const Index = ({ user, searchValue }) => {
 
   const searchValueLowerCase = searchValue.toLowerCase()
 
-  const filterData = index.filter((item) =>
-    item.content.toLowerCase().includes(searchValueLowerCase) || item.facility.toLowerCase().includes(searchValueLowerCase) || item.name.toLowerCase().includes(searchValueLowerCase) || item.clinician.toLowerCase().includes(searchValueLowerCase) || item.state.toLowerCase().includes(searchValueLowerCase)
+  const filterData = index.filter(
+    (item) =>
+      item.content.toLowerCase().includes(searchValueLowerCase) ||
+      item.facility.toLowerCase().includes(searchValueLowerCase) ||
+      item.name.toLowerCase().includes(searchValueLowerCase) ||
+      item.clinician.toLowerCase().includes(searchValueLowerCase) ||
+      item.state.toLowerCase().includes(searchValueLowerCase)
   )
 
   const messageData = filterData.map((item) => (
@@ -36,16 +41,13 @@ const Index = ({ user, searchValue }) => {
   ))
   return (
     <div>
-      <div className="index-header">
-        <div className="thanks-box">
-          {index.length}
-          <br />
-          Thanks Sent
-        </div>
-        <div className="index-header-text">
-          <h2>The frontline needs us as much as we need them.</h2>
-          <h2>Thank them virtually with a personalized post!</h2>
-        </div>
+      <div className="thanks-box">
+        {index.length} <br />
+        Thanks Sent
+      </div>
+      <div className="index-header-text">
+        <h2>The frontline needs us as much as we need them.</h2>
+        <h2>Thank them virtually with a personalized post!</h2>
       </div>
       <div className="index-container">{messageData.reverse()}</div>
     </div>

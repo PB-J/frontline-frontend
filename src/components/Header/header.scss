@@ -22,17 +22,16 @@
   flex-direction: column;
   align-items: center;
   font-size: 15px;
-  transition: transform .2s;
+  transition: transform 0.2s;
 }
 
 .message-link:hover {
   transform: scale(1.1);
 }
 
-
 .message-icon {
   font-size: 40px;
-  color: #03838C;
+  color: #03838c;
 }
 
 .search-bar-container {
@@ -43,5 +42,5 @@
 }
 
 .app-logo {
-  align-self: center;
+  margin-left: 50px;
 }

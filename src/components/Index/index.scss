@@ -5,9 +5,11 @@
   justify-content: center;
 }
 .index-header-text {
+  margin-top: 16px;
   text-align: center;
   vertical-align: center;
-  padding-top: 35px;
+  font-size: 24px;
+  font-weight: 600;
 }
 .index-container {
   display: flex;
@@ -26,12 +28,34 @@
 }
 
 @media (max-width: 1024px) {
+  .index-header-text {
+    margin-top: 16px;
+    font-family: 'Spartan', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
 }
 
 @media (max-width: 991px) {
-  .index-header-text-mobile {
+  .index-header-text {
+    font-family: 'Spartan', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
     display: flex;
     justify-content: center;
+    text-align: center;
+  }
+  .thanks-box {
+    position: relative;
+    width: 100px;
+    font-weight: bolder;
+    margin: 16px auto;
+    border-bottom: #03838c solid 3px;
+    text-align: center;
+    line-height: 18px;
   }
 }
 
@@ -40,9 +64,6 @@
     display: none;
   }
   .index-header-text {
-    display: none;
-  }
-  .index-header-text-mobile {
     margin-top: 16px;
     font-family: 'Spartan', sans-serif;
     font-size: 24px;

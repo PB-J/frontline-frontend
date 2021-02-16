@@ -4,18 +4,7 @@
   justify-content: center;
   font-family: 'Spartan', sans-serif;
   background-color: white;
-}
-
-.navbar-collapse {
-  flex-grow: unset;
-  background-color: white;
-}
-
-.search-icon {
-  display: flex;
-  img {
-    margin: 5px;
-  }
+  width: 100vw;
 }
 
 .message-link {
@@ -46,14 +35,75 @@
 
 .app-logo {
   display: flex;
-  flex: 1;
   width: 34vw;
   justify-content: center;
 }
 
 .auth-link {
   display: flex;
-  justify-content: flex-start;
-  flex: 1;
+  justify-content: left;
   width: 33vw;
+}
+
+// Hide Mobile Nav Search Bar
+.mobile-nav-search-bar {
+  display: none;
+}
+
+// Media Breakpoints
+
+@media (max-width: 1024px) {
+}
+
+@media (max-width: 991px) {
+  .navbar {
+    display: flex;
+    padding: 16px;
+    justify-content: space-between;
+    width: 100%;
+    .app-logo {
+      justify-content: left;
+      img {
+        order: 1;
+        height: 19px;
+      }
+    }
+    // Desktop / Large Screen Readers Only
+    .search-bar-container {
+      display: none;
+    }
+    // Mobile Search Bar in Hamburger Dropdown
+    .mobile-nav-search-bar {
+      display: flex;
+    }
+    // Hamburger menu
+    .navbar-toggler {
+      order: 2;
+    }
+    .navbar-collapse {
+      order: 3;
+      .nav-dropdown {
+        width: 100%;
+        align-items: center;
+        flex-direction: column-reverse;
+        .mobile-nav-search-bar {
+          padding: 32px 0px 24px 0px;
+          border-bottom: 1px solid #576464;
+          justify-content: center;
+          width: 100%;
+          img {
+            margin: 5px;
+          }
+        }
+        .auth-link-mobile {
+          padding: 24px 0px;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
 }

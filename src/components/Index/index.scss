@@ -27,6 +27,7 @@
   line-height: 18px;
 }
 
+<<<<<<< HEAD
 @media (max-width: 1024px) {
   .index-header-text {
     margin-top: 16px;
@@ -72,4 +73,25 @@
     justify-content: center;
     text-align: center;
   }
+=======
+// Media Breakpoints
+
+@media (max-width: 1024px) {
+  // Do not display the number of thanks sent
+  .thanks-box {
+    display: none;
+  }
+  .index-header-text {
+    padding-top: 0;
+    .index-placeholder-message {
+      margin: 40px 0;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+}
+
+@media (max-width: 480px) {
+>>>>>>> main
 }

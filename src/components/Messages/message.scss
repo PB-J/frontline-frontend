@@ -1,20 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Spartan&display=swap');
 
 .create-message-title {
-  width: 65%;
-  font-weight: bold;
-  margin-right: 10px;
+  width: 60%;
 }
 
 h1 {
-  font-size: 2.5rem;
+  font-size: 2rem;
+  font-weight: 900;
 }
 
 .create-message-container {
   margin-top: 25px;
   border: 2px solid black;
   border-radius: 10px;
-  padding: 50px;
+  padding: 32px 120px 0px 64px;
   font-family: 'Spartan', sans-serif;
   max-width: 800px;
   background-color: white;
@@ -34,7 +33,7 @@ h1 {
 .create-message-option {
   display: flex;
   justify-content: space-between;
-  min-width: 300px;
+  flex-direction: column;
   padding: 10px;
 }
 
@@ -42,12 +41,16 @@ h1 {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding-bottom: 20px;
+  padding-bottom: 24px;
 }
 
 .create-message-title-text {
-  align-self: center;
+  text-align: center;
+  width: 40%;
   color: #576464;
+  & p {
+    font-size: 12px;
+  }
 }
 
 .create-message-textarea {
@@ -62,4 +65,64 @@ h1 {
   border: none;
   font-weight: bolder;
   margin-top: 10px;
+  align-self: center;
+}
+
+@media (max-width: 764px) {
+  .create-message-container {
+    padding: 10px 0 10px 0 !important;
+    margin-top: 0 !important;
+    border: none !important;
+    border-radius: 0px !important;
+    width: 100vw;
+  }
+  .create-message-title-row {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 !important;
+  }
+  .create-message-title {
+    width: 90%;
+    text-align: center;
+  }
+
+  #checkBox {
+    margin-left: 10px;
+  }
+
+  .create-message-title-text {
+    text-align: center;
+    width: 70%;
+    color: #576464;
+    & p {
+      font-size: 15px;
+    }
+  }
+
+  .create-message-add-optional-title {
+    padding-left: 10px;
+  }
+
+  .create-message-optional {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-top: 15px;
+  }
+
+  #message {
+    display: flex;
+    flex-direction: column;
+  }
+  .create-message-submit {
+    width: 75vw;
+  }
+  .create-message-option {
+    display: flex;
+    width: 80vw;
+    flex-direction: column;
+  }
 }

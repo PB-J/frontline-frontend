@@ -32,11 +32,24 @@ const unauthenticatedOptions = (
 const Header = ({ user, handleChange }) => {
   const hideSearchBar = window.location.hash === '#/profile'
   return (
-    <Navbar className="header-nav-bar" expand="md">
+    <Navbar className="header-nav-bar" expand="lg">
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="ml-auto auth-link">
-          {user ? authenticatedOptions : unauthenticatedOptions}
+        <Nav className="nav-dropdown">
+          <div className="auth-link-mobile auth-link">
+            {user ? authenticatedOptions : unauthenticatedOptions}
+          </div>
+          <div className="mobile-nav-search-bar">
+            <img src={searchIcon}></img>
+            <Form inline>
+              <FormControl
+                onChange={handleChange}
+                type="text"
+                placeholder="Search"
+                className="nav-search-bar mr-sm-2"
+              />
+            </Form>
+          </div>
         </Nav>
       </Navbar.Collapse>
 

@@ -49,6 +49,9 @@ const Index = ({ user, searchValue }) => {
         <h2>The frontline needs us as much as we need them.</h2>
         <h2>Thank them virtually with a personalized post!</h2>
       </div>
+      <div className="index-header-text-mobile">
+        Share your gratitude to health care workers with a personalized post!
+      </div>
       <div className="index-container">{messageData.reverse()}</div>
     </div>
   )

@@ -51,7 +51,7 @@ class App extends Component {
             message={msgAlert.message}
           />
         ))}
-        <main className="container">
+        <main className="main-container">
           <Route
             path="/sign-up"
             render={() => (

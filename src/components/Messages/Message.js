@@ -60,26 +60,30 @@ const Message = ({ user, msgAlert }) => {
       {messageId && <Redirect to={'/profile'} />}
       <div className="create-message-title-row">
         <div className="create-message-title">
-          <h1>Write a Thank you</h1>
+          <h1>Post a Thank You</h1>
         </div>
         <div className="create-message-title-text">
           <p>Tell frontline healthcare workers how much you appreciate them!</p>
         </div>
       </div>
       <form onSubmit={handleSubmit} id="message" name="message">
-        <h3>Message:</h3>
         <EmojiTextarea
-          setText= {setText}
+          setText={setText}
           className="create-message-textarea"
           name="content"
           rows={5}
           placeholder=""
-          editValue= {message.content}
-          handleChange = {handleContentChange}
+          editValue={message.content}
+          handleChange={handleContentChange}
         />
         <div>
-          <input type="checkbox" name="name" onClick={handleCheck} /> Post as
-          anonymous.
+          <input
+            id="checkBox"
+            type="checkbox"
+            name="name"
+            onClick={handleCheck}
+          />{' '}
+          Post as anonymous.
           <h5 className="create-message-add-optional-title">
             Add to your post (optional)
           </h5>

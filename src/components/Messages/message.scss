@@ -33,7 +33,7 @@ h1 {
 .create-message-option {
   display: flex;
   justify-content: space-between;
-  min-width: 300px;
+  flex-direction: column;
   padding: 10px;
 }
 
@@ -63,17 +63,17 @@ h1 {
   padding: 8px;
   border-radius: 10px;
   border: none;
-  width: 300px;
   font-weight: bolder;
   margin-top: 10px;
   align-self: center;
 }
 
-@media (max-width: 830px) {
+@media (max-width: 764px) {
   .create-message-container {
     padding: 10px 0 10px 0 !important;
-    margin: 0;
-    border: none;
+    margin-top: 0 !important;
+    border: none !important;
+    border-radius: 0px !important;
     width: 100vw;
   }
   .create-message-title-row {
@@ -107,8 +107,8 @@ h1 {
 
   .create-message-optional {
     display: flex;
-    width: 100%;
     flex-direction: row;
+    justify-content: center;
     flex-wrap: wrap;
     padding-top: 15px;
   }
@@ -116,8 +116,13 @@ h1 {
   #message {
     display: flex;
     flex-direction: column;
-    &.create-message-submit {
-      width: 300px;
-    }
+  }
+  .create-message-submit {
+    width: 75vw;
+  }
+  .create-message-option {
+    display: flex;
+    width: 80vw;
+    flex-direction: column;
   }
 }

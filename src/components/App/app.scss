@@ -3,3 +3,10 @@
   justify-content: center;
   align-items: center;
 }
+
+@media (max-width: 830px) {
+  .container {
+    padding: 0 !important;
+    margin: 0 auto;
+  }
+}

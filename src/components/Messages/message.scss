@@ -2,7 +2,6 @@
 
 .create-message-title {
   width: 60%;
-  margin-right: 32px;
 }
 
 h1 {
@@ -46,7 +45,7 @@ h1 {
 }
 
 .create-message-title-text {
-  align-self: center;
+  text-align: center;
   width: 40%;
   color: #576464;
   & p {
@@ -73,29 +72,33 @@ h1 {
 @media (max-width: 830px) {
   .create-message-container {
     padding: 10px 0 10px 0 !important;
+    margin: 0;
+    border: none;
+    border-radius: 0;
+    width: 100vw;
   }
   .create-message-title-row {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-bottom: 24px;
+    padding: 0 !important;
   }
   .create-message-title {
     width: 90%;
     text-align: center;
-    margin-right: 32px;
   }
+
   #checkBox {
     margin-left: 10px;
   }
 
   .create-message-title-text {
-    align-items: center;
+    text-align: center;
     width: 70%;
     color: #576464;
     & p {
-      font-size: 9px;
+      font-size: 15px;
     }
   }
 

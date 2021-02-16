@@ -9,12 +9,16 @@
 }
 
 .profile-data {
-  margin-top: 30px;
-  margin-bottom: 30px;
-  padding: 30px;
+  margin: 16px auto;
+  padding: 24px;
+  width: 343px;
+  height: 206px;
   background-color: white;
+  border-radius: 15px;
 }
+
 .sent-cards {
+  margin: auto;
   padding-top: 40px;
   padding-bottom: 32px;
   display: flex;
@@ -23,13 +27,16 @@
   font-family: 'Spartan', sans-serif;
   font-size: 24px;
   color: white;
+  width: 75%;
 }
 .profile-index-container {
+  margin: auto;
   display: flex;
   flex-wrap: wrap;
   overflow: scroll;
   background-color: #03838c;
   justify-content: center;
+  width: 75%;
 }
 
 .link {

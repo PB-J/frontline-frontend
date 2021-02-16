@@ -77,8 +77,13 @@ const Message = ({ user, msgAlert }) => {
           handleChange={handleContentChange}
         />
         <div>
-          <input type="checkbox" name="name" onClick={handleCheck} /> Post as
-          anonymous.
+          <input
+            id="checkBox"
+            type="checkbox"
+            name="name"
+            onClick={handleCheck}
+          />{' '}
+          Post as anonymous.
           <h5 className="create-message-add-optional-title">
             Add to your post (optional)
           </h5>

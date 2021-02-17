@@ -2,6 +2,13 @@
 
 .edit-send {
   margin: 10px;
+  background-color: #03838c;
+  color: white;
+  padding: 8px;
+  border-radius: 10px;
+  border: none;
+  font-weight: bolder;
+  align-self: center;
 }
 .profile-container {
   height: 80vh;
@@ -48,16 +55,26 @@
   text-decoration: underline;
 }
 
-.create-message-container {
-  margin-top: 25px;
-  border: 2px solid black;
-  border-radius: 10px;
-  padding: 50px;
+.update-message-container {
   font-family: 'Spartan', sans-serif;
-  box-shadow: 10px 10px 10px silver;
   max-width: 800px;
   background-color: white;
 }
+
+.closeButton {
+  line-height: 1.2rem;
+  padding: 2px;
+  color: #03838c;
+}
+.closeButton:hover {
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+
+.header-container {
+  display: flex;
+  justify-content: flex-end;
+  
 @media (max-width: 480px) {
   .user-info {
     padding-bottom: 16px;

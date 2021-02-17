@@ -67,7 +67,12 @@ function Card({
       )}
 
       <div>
-        <Overlay target={target.current} show={show} placement="right">
+        <Overlay
+          target={target.current}
+          show={show}
+          placement="left"
+          data-backdrop="true"
+        >
           {({ placement, arrowProps, show: _show, popper, ...props }) => (
             <div
               {...props}

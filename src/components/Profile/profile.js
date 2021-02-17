@@ -137,14 +137,16 @@ function Profile({ user, owner }) {
       <Modal
         show={show}
         onHide={handleClose}
-        backdrop="static"
+        data-backdrop="true"
         keyboard={false}
       >
-        <Modal.Header closeButton>
-          <Modal.Title>Update</Modal.Title>
-        </Modal.Header>
-        <Modal.Body className="create-message-container">
+        <Modal.Body className="update-message-container">
           <form onSubmit={handleSubmit} id="message" name="message">
+            <div className="header-container">
+              <div className="closeButton" onClick={() => setShow(!show)}>
+                X
+              </div>
+            </div>
             <p>Name:</p>
             <input
               onChange={handleChange}
@@ -190,11 +192,6 @@ function Profile({ user, owner }) {
             </Button>
           </form>
         </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-        </Modal.Footer>
       </Modal>
     </div>
   )

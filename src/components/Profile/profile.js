@@ -135,11 +135,11 @@ function Profile({ user, owner }) {
       <Modal
         show={show}
         onHide={handleClose}
-        backdrop="static"
+        data-backdrop="true"
         keyboard={false}
       >
         <Modal.Header closeButton></Modal.Header>
-        <Modal.Body className="create-message-container">
+        <Modal.Body className="update-message-container">
           <form onSubmit={handleSubmit} id="message" name="message">
             <p>Name:</p>
             <input

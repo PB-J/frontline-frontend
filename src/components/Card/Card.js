@@ -61,7 +61,12 @@ function Card({
       )}
       {state !== '' ? <div className="state">#{state}</div> : ''}
       <div>
-        <Overlay target={target.current} show={show} placement="left">
+        <Overlay
+          target={target.current}
+          show={show}
+          placement="left"
+          data-backdrop="true"
+        >
           {({ placement, arrowProps, show: _show, popper, ...props }) => (
             <div
               {...props}

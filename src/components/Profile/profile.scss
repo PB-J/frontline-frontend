@@ -2,6 +2,13 @@
 
 .edit-send {
   margin: 10px;
+  background-color: #03838c;
+  color: white;
+  padding: 8px;
+  border-radius: 10px;
+  border: none;
+  font-weight: bolder;
+  align-self: center;
 }
 .profile-container {
   height: 80vh;
@@ -30,4 +37,10 @@
 .link:hover {
   color: #03838c;
   text-decoration: underline;
+}
+
+.update-message-container {
+  font-family: 'Spartan', sans-serif;
+  max-width: 800px;
+  background-color: white;
 }

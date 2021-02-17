@@ -138,9 +138,13 @@ function Profile({ user, owner }) {
         data-backdrop="true"
         keyboard={false}
       >
-        <Modal.Header closeButton></Modal.Header>
         <Modal.Body className="update-message-container">
           <form onSubmit={handleSubmit} id="message" name="message">
+            <div className="header-container">
+              <div className="closeButton" onClick={() => setShow(!show)}>
+                X
+              </div>
+            </div>
             <p>Name:</p>
             <input
               onChange={handleChange}

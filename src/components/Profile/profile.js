@@ -164,24 +164,33 @@ function Profile({ user, owner }) {
               editValue={message.content}
               handleChange={handleContentChange}
             />
-            <input
-              onChange={handleChange}
-              value={message.clinician}
-              name="clinician"
-              placeholder="Clinician"
-            ></input>
-            <input
-              onChange={handleChange}
-              value={message.facility}
-              name="facility"
-              placeholder="Facilty"
-            ></input>
-            <input
-              onChange={handleChange}
-              value={message.state}
-              name="state"
-              placeholder="Location"
-            ></input>
+            <div className="create-message-option">
+              Clinician:
+              <input
+                onChange={handleChange}
+                value={message.clinician}
+                name="clinician"
+                placeholder="Clinician"
+              ></input>
+            </div>
+            <div className="create-message-option">
+              Facility:
+              <input
+                onChange={handleChange}
+                value={message.facility}
+                name="facility"
+                placeholder="Facilty"
+              ></input>
+            </div>
+            <div className="create-message-option">
+              Location:
+              <input
+                onChange={handleChange}
+                value={message.state}
+                name="state"
+                placeholder="Location"
+              ></input>
+            </div>
             <Button
               className="edit-send"
               variant="secondary"

@@ -40,7 +40,7 @@ const Index = ({ user, searchValue }) => {
     </div>
   ))
   return (
-    <div>
+    <div className="thank-count-container">
       <div className="thanks-box">
         {index.length} <br />
         Thanks Sent

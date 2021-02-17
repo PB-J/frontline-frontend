@@ -42,7 +42,8 @@ function Profile({ user, owner }) {
       headers: {
         Authorization: `Token token=${user.token}`
       }
-    }).then((res) => setMessage(res.data.message))
+    })
+      .then((res) => setMessage(res.data.message))
       .then(() => setText(message.content))
   }
 
@@ -62,7 +63,8 @@ function Profile({ user, owner }) {
         headers: {
           Authorization: `Token token=${user.token}`
         }
-      }).then((res) => setIndex(res.data.messages))
+      })
+        .then((res) => setIndex(res.data.messages))
         .then(() => setShow(false))
         .then(() => setEditDeleteShow(false))
     })
@@ -136,10 +138,8 @@ function Profile({ user, owner }) {
         backdrop="static"
         keyboard={false}
       >
-        <Modal.Header closeButton>
-          <Modal.Title>Update</Modal.Title>
-        </Modal.Header>
-        <Modal.Body className='create-message-container'>
+        <Modal.Header closeButton></Modal.Header>
+        <Modal.Body className="create-message-container">
           <form onSubmit={handleSubmit} id="message" name="message">
             <p>Name:</p>
             <input
@@ -150,13 +150,13 @@ function Profile({ user, owner }) {
             ></input>
             <p>Message:</p>
             <EmojiTextarea
-              setText= {setText}
+              setText={setText}
               className="create-message-textarea"
               name="content"
               rows={3}
               placeholder=""
-              editValue= {message.content}
-              handleChange = {handleContentChange}
+              editValue={message.content}
+              handleChange={handleContentChange}
             />
             <input
               onChange={handleChange}
@@ -176,16 +176,16 @@ function Profile({ user, owner }) {
               name="state"
               placeholder="Location"
             ></input>
-            <Button className='edit-send' variant="secondary" onClick={handleClose} type="submit">
+            <Button
+              className="edit-send"
+              variant="secondary"
+              onClick={handleClose}
+              type="submit"
+            >
               Send
             </Button>
           </form>
         </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-        </Modal.Footer>
       </Modal>
     </div>
   )

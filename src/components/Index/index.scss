@@ -29,7 +29,6 @@
 
 @media (max-width: 1024px) {
   .index-header-text {
-    margin-top: 16px;
     font-family: 'Spartan', sans-serif;
     font-size: 24px;
     font-weight: 600;
@@ -47,15 +46,10 @@
     display: flex;
     justify-content: center;
     text-align: center;
+    margin: 40px 0;
   }
   .thanks-box {
-    position: relative;
-    width: 100px;
-    font-weight: bolder;
-    margin: 16px auto;
-    border-bottom: #03838c solid 3px;
-    text-align: center;
-    line-height: 18px;
+    display: none;
   }
 }
 
@@ -64,7 +58,6 @@
     display: none;
   }
   .index-header-text {
-    margin-top: 16px;
     font-family: 'Spartan', sans-serif;
     font-size: 24px;
     font-weight: 600;

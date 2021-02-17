@@ -1,4 +1,5 @@
-import React, { Fragment } from 'react'
+import React from 'react'
+import { Link } from 'react-router-dom'
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 import { Form, FormControl } from 'react-bootstrap'
@@ -11,28 +12,43 @@ import { MdAddCircle, MdPerson } from 'react-icons/md'
 import './header.scss'
 
 const authenticatedOptions = (
-  <Fragment>
-    <Nav.Link className="message-link" href="#message">
-      <MdAddCircle className="message-icon" />
-      Add Post
-    </Nav.Link>
-    <Nav.Link className="message-link" href="#profile">
-      <MdPerson className="message-icon" />
-      Profile
-    </Nav.Link>
-  </Fragment>
+  <div className="nav-header-links">
+    <div className="create-post-link">
+      <Nav.Link href="#message">
+        <MdAddCircle className="message-icon" />
+        Add Post
+      </Nav.Link>
+    </div>
+    <div className="profile-link">
+      <Nav.Link href="#profile">
+        <MdPerson className="message-icon" />
+        Profile
+      </Nav.Link>
+    </div>
+    <div className="sign-out-link">
+      <Link to="/sign-out">
+        <p>Sign Out</p>
+      </Link>
+    </div>
+  </div>
 )
 
 const unauthenticatedOptions = (
-  <Fragment>
+  <div className="sign-in-link">
     <Nav.Link href="#sign-in">Sign In</Nav.Link>
-  </Fragment>
+  </div>
 )
 
 const Header = ({ user, handleChange }) => {
   const hideSearchBar = window.location.hash === '#/profile'
   return (
     <Navbar className="header-nav-bar" expand="lg">
+      <div className="mobile-create-post-link">
+        <Nav.Link href="#message">
+          <MdAddCircle className="message-icon" />
+          Add Post
+        </Nav.Link>
+      </div>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="nav-dropdown">

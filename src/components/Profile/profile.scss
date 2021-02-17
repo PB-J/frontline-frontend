@@ -16,18 +16,34 @@
 }
 
 .profile-data {
-  margin-top: 30px;
-  margin-bottom: 30px;
-  padding: 30px;
+  margin: 16px auto;
+  padding: 24px;
+  width: 343px;
+  height: 206px;
   background-color: white;
+  border-radius: 15px;
 }
 
+.sent-cards {
+  margin: auto;
+  padding-top: 40px;
+  padding-bottom: 32px;
+  display: flex;
+  background-color: #03838c;
+  justify-content: center;
+  font-family: 'Spartan', sans-serif;
+  font-size: 24px;
+  color: white;
+  width: 75%;
+}
 .profile-index-container {
+  margin: auto;
   display: flex;
   flex-wrap: wrap;
   overflow: scroll;
   background-color: #03838c;
   justify-content: center;
+  width: 75%;
 }
 
 .link {
@@ -58,4 +74,30 @@
 .header-container {
   display: flex;
   justify-content: flex-end;
+  
+@media (max-width: 480px) {
+  .user-info {
+    padding-bottom: 16px;
+    font-family: 'Spartan', sans-serif;
+  }
+  .profile-data {
+    margin: 16px auto;
+    padding: 24px;
+    width: 343px;
+    height: 206px;
+    background-color: white;
+    border-radius: 15px;
+  }
+
+  .profile-index-container {
+    display: flex;
+    flex-wrap: wrap;
+    overflow: scroll;
+    background-color: #03838c;
+    width: 100%;
+    justify-content: center;
+  }
+  .sent-cards {
+    width: 100%;
+  }
 }

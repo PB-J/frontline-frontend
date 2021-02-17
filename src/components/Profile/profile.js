@@ -121,9 +121,10 @@ function Profile({ user, owner }) {
   return (
     <div className="profile-container">
       <div className="profile-data">
-        <h2>{user.username}</h2>
-        <h3>{user.email}</h3>
-        <h2>Your sent cards ({index.length})</h2>
+        <div className="user-info">
+          <p>Hello, {user.username} </p>
+          <p>{user.email}</p>
+        </div>
         <Link className="link" to="/change-password">
           <p>Change Password</p>
         </Link>
@@ -131,6 +132,7 @@ function Profile({ user, owner }) {
           <p>Sign Out</p>
         </Link>
       </div>
+      <div className="sent-cards">Your Sent Cards ({index.length})</div>
       <div className="profile-index-container">{messageData.reverse()}</div>
       <Modal
         show={show}

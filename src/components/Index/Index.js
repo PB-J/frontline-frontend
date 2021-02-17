@@ -46,9 +46,7 @@ const Index = ({ user, searchValue }) => {
         Thanks Sent
       </div>
       <div className="index-header-text">
-        <h2 className="index-placeholder-message">
-          Share your gratitude to health care workers with a personalized post!
-        </h2>
+        Share your gratitude to health care workers with a personalized post!
       </div>
       <div className="index-container">{messageData.reverse()}</div>
     </div>

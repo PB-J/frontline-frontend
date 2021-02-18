@@ -5,7 +5,7 @@
   justify-content: center;
 }
 .index-header-text {
-  margin-top: 16px;
+  margin: 48px 0px 72px 0;
   text-align: center;
   vertical-align: center;
   font-size: 24px;
@@ -20,6 +20,7 @@
 .thanks-box {
   position: absolute;
   left: -30px;
+  top: 100px;
   font-weight: bolder;
   margin: 50px;
   border-bottom: #03838c solid 3px;

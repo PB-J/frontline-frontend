@@ -88,7 +88,7 @@ const Header = ({ user, handleChange }) => {
           </Form>
         </div>
       ) : (
-        <div className="hide-search-bar" style={{ display: 'none' }}>
+        <div className="hide-search-bar" style={{ visibility: 'hidden' }}>
           <img src={searchIcon}></img>
           <Form inline>
             <FormControl

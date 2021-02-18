@@ -5,6 +5,7 @@
   font-family: 'Spartan', sans-serif;
   background-color: white;
   width: 100vw;
+  height: 96px;
 }
 
 // hide mobile create post link on large screen readers
@@ -70,6 +71,10 @@
   display: none;
 }
 
+.hide-search-bar {
+  width: 33vw;
+}
+
 // Media Breakpoints
 @media (max-width: 1024px) {
   .navbar {
@@ -85,6 +90,7 @@
     padding: 16px;
     justify-content: space-between;
     width: 100%;
+    height: 100%;
     .app-logo {
       justify-content: left;
       img {
@@ -121,7 +127,6 @@
     .navbar-collapse {
       order: 4;
       .nav-dropdown {
-        width: 100%;
         align-items: center;
         flex-direction: column-reverse;
         .mobile-nav-search-bar {

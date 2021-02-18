@@ -14,7 +14,7 @@
 
 .nav-header-links {
   display: flex;
-  .create-post-link {
+  .create-post-link a {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -23,7 +23,7 @@
       transform: scale(1.1);
     }
   }
-  .profile-link {
+  .profile-link a {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -156,6 +156,7 @@
               padding: 24px 0;
               a {
                 padding: 0;
+                flex-direction: row;
               }
             }
             .sign-out-link {

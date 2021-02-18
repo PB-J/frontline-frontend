@@ -27,7 +27,8 @@
   margin: 0px 16px 0px 16px;
 }
 .facility {
-  margin-bottom: 10px;
+  line-height: 1;
+  margin: 40px 16px 0px 16px;
 }
 
 .card-heading {
@@ -45,24 +46,27 @@
 .dates {
   float: right;
   color: #576464;
-  font-size: 10px;
   font-family: 'Spartan', sans-serif;
+  font-weight: 300;
+  font-size: 12px;
+  margin: 24px 16px 24px 16px;
 }
 
 .content {
   font-family: 'Spartan', sans-serif;
   font-size: 20px;
-  font-weight: 900;
   text-align: left;
   word-wrap: break-word;
+  font-weight: 600;
+  line-height: 141%;
 }
 
 .name {
   font-family: 'Spartan', sans-serif;
-  font-size: 16px;
   color: #576464;
-  font-weight: 700;
-  float: left;
+  font-weight: 500;
+  line-height: normal;
+  font-size: 16px;
 }
 
 .line {
@@ -71,15 +75,16 @@
 
 .facility {
   color: #03838c;
-  font-size: 16px;
-  margin: 30px 0px 0px 0px;
+  line-height: 1;
+  margin: 40px 16px 0px 16px;
   font-weight: 600;
 }
 
 .state {
   color: #03838c;
   font-size: 16px;
-  margin: 0px 30px 0px 0px;
+  line-height: 1;
+  margin: 0px 16px 48px 16px;
   font-weight: 600;
 }
 
@@ -87,7 +92,9 @@
   color: #03838c;
   font-size: 16px;
   font-weight: 600;
+    margin: 0px 16px 0px 16px;
 }
+
 .btn-icon {
   background-color: #03838c;
   padding: 0;

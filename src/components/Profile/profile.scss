@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Spartan&display=swap');
 
 .edit-send {
-  margin: 10px;
   background-color: #03838c;
   color: white;
   padding: 8px;
   border-radius: 10px;
   border: none;
   font-weight: bolder;
+  margin: 10px 0 40px 0;
   align-self: center;
 }
 .profile-container {
@@ -100,4 +100,9 @@
   .sent-cards {
     width: 100%;
   }
+}
+
+.modal-backdrop.show {
+  opacity: 1;
+  background-color: #9ec3c6;
 }

@@ -70,6 +70,19 @@ function Profile({ user, owner }) {
     })
   }
 
+  const handleCheck = (event) => {
+    event.persist()
+    const value =
+      event.target.name === 'name' && event.target.checked === true
+        ? 'Anonymous'
+        : user.username
+    setMessage((prevMessage) => {
+      const updatedMessage = { [event.target.name]: value }
+      const editedMessage = Object.assign({}, prevMessage, updatedMessage)
+      return editedMessage
+    })
+  }
+
   const handleDelete = (event) => {
     axios({
       url: `${apiUrl}/messages/${event.target.name}`,
@@ -147,14 +160,7 @@ function Profile({ user, owner }) {
                 X
               </div>
             </div>
-            <p>Name:</p>
-            <input
-              onChange={handleChange}
-              value={message.name}
-              name="name"
-              placeholder="Name"
-            ></input>
-            <p>Message:</p>
+            <h1>Update Your Post</h1>
             <EmojiTextarea
               setText={setText}
               className="create-message-textarea"
@@ -164,32 +170,45 @@ function Profile({ user, owner }) {
               editValue={message.content}
               handleChange={handleContentChange}
             />
-            <div className="create-message-option">
-              Clinician:
+            <div className="checkbox">
               <input
-                onChange={handleChange}
-                value={message.clinician}
-                name="clinician"
-                placeholder="Clinician"
-              ></input>
+                id="checkbox"
+                type="checkbox"
+                name="name"
+                onClick={handleCheck}
+              />{' '}
+              <label htmlFor="checkbox">
+                <span>Post as anonymous</span>
+              </label>
             </div>
-            <div className="create-message-option">
-              Facility:
-              <input
-                onChange={handleChange}
-                value={message.facility}
-                name="facility"
-                placeholder="Facilty"
-              ></input>
-            </div>
-            <div className="create-message-option">
-              Location:
-              <input
-                onChange={handleChange}
-                value={message.state}
-                name="state"
-                placeholder="Location"
-              ></input>
+            <div className="create-message-optional">
+              <div className="create-message-option">
+                Clinician:
+                <input
+                  onChange={handleChange}
+                  value={message.clinician}
+                  name="clinician"
+                  placeholder="Clinician"
+                ></input>
+              </div>
+              <div className="create-message-option">
+                Facility:
+                <input
+                  onChange={handleChange}
+                  value={message.facility}
+                  name="facility"
+                  placeholder="Facilty"
+                ></input>
+              </div>
+              <div className="create-message-option">
+                Location:
+                <input
+                  onChange={handleChange}
+                  value={message.state}
+                  name="state"
+                  placeholder="Location"
+                ></input>
+              </div>
             </div>
             <Button
               className="edit-send"

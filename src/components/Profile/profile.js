@@ -110,6 +110,11 @@ function Profile({ user, owner }) {
     940: 1
   }
 
+  const breakpointColumnsObjOf2 = {
+    default: 2,
+    940: 1
+  }
+
   useEffect(() => {
     axios({
       url: `${apiUrl}/profile/`,
@@ -154,13 +159,24 @@ function Profile({ user, owner }) {
       </div>
       <div className="sent-cards">Your Sent Cards ({index.length})</div>
       <div className="profile-index-container">
-        <Masonry
-          breakpointCols={breakpointColumnsObj}
-          className="my-masonry-grid"
-          columnClassName="my-masonry-grid_column"
-        >
-          {messageData.reverse()}
-        </Masonry>
+        {messageData.length > 2 && (
+          <Masonry
+            breakpointCols={breakpointColumnsObj}
+            className="my-masonry-grid"
+            columnClassName="my-masonry-grid_column"
+          >
+            {messageData.reverse()}
+          </Masonry>
+        )}
+        {messageData.length <= 2 && (
+          <Masonry
+            breakpointCols={breakpointColumnsObjOf2}
+            className="my-masonry-grid"
+            columnClassName="my-masonry-grid_column"
+          >
+            {messageData.reverse()}
+          </Masonry>
+        )}
       </div>
       <Modal
         show={show}

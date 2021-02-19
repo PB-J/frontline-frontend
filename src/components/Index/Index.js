@@ -32,6 +32,11 @@ const Index = ({ user, searchValue }) => {
     700: 1
   }
 
+  const breakpointColumnsObjOf2 = {
+    default: 2,
+    940: 1
+  }
+
   const messageData = filterData.map((item) => (
     <div key={item._id} className="card-item">
       <Card
@@ -56,13 +61,24 @@ const Index = ({ user, searchValue }) => {
         Share your gratitude to health care workers with a personalized post!
       </div>
       <div className="masonry-container">
-        <Masonry
-          breakpointCols={breakpointColumnsObj}
-          className="my-masonry-grid"
-          columnClassName="my-masonry-grid_column"
-        >
-          {messageData.reverse()}
-        </Masonry>
+        {messageData.length > 2 && (
+          <Masonry
+            breakpointCols={breakpointColumnsObj}
+            className="my-masonry-grid"
+            columnClassName="my-masonry-grid_column"
+          >
+            {messageData.reverse()}
+          </Masonry>
+        )}
+        {messageData.length <= 2 && (
+          <Masonry
+            breakpointCols={breakpointColumnsObjOf2}
+            className="my-masonry-grid"
+            columnClassName="my-masonry-grid_column"
+          >
+            {messageData.reverse()}
+          </Masonry>
+        )}
       </div>
     </div>
   )

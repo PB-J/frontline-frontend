@@ -40,9 +40,15 @@ function Card({
       </div>
       <div
         className={
-          facility !== ' ' || clinician !== ' ' || state !== ' '
+          (facility !== 'not provided' &&
+            facility !== ' ' &&
+            facility !== '') ||
+          (clinician !== 'not provided' &&
+            clinician !== ' ' &&
+            clinician !== '') ||
+          (state !== 'not provided' && state !== ' ' && state !== '')
             ? 'top-content'
-            : ''
+            : 'top-content-no-content'
         }
       >
         <h2 className="content">{content}</h2>

@@ -38,7 +38,6 @@
   justify-content: flex-end;
 }
 
-
 .dates {
   float: right;
   color: #576464;
@@ -69,10 +68,13 @@
   color: #c4c4c4;
 }
 
+.bottom-content {
+  margin: 40px 0 48px 0;
+}
 .facility {
   color: #03838c;
   line-height: 1;
-  margin: 40px 16px 0px 16px;
+  margin: 0px 16px 0px 16px;
   font-weight: 600;
 }
 
@@ -80,7 +82,7 @@
   color: #03838c;
   font-size: 16px;
   line-height: 1;
-  margin: 0px 16px 48px 16px;
+  margin: 0px 16px 0px 16px;
   font-weight: 600;
 }
 

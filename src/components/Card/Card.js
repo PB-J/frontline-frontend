@@ -50,21 +50,23 @@ function Card({
         <h3 className="name">-{name}</h3>
         <br />
       </div>
-      {facility !== 'not provided' && facility !== ' ' ? (
-        <p className="facility">#{facility}</p>
-      ) : (
-        ''
-      )}
-      {clinician !== 'not provided' && clinician !== ' ' ? (
-        <p className="clinician">#{clinician}</p>
-      ) : (
-        ''
-      )}
-      {state !== 'not provided' && state !== ' ' ? (
-        <p className="state">#{state}</p>
-      ) : (
-        ''
-      )}
+      <div className="bottom-content">
+        {facility !== 'not provided' && facility !== ' ' ? (
+          <p className="facility">#{facility}</p>
+        ) : (
+          ''
+        )}
+        {clinician !== 'not provided' && clinician !== ' ' ? (
+          <p className="clinician">#{clinician}</p>
+        ) : (
+          ''
+        )}
+        {state !== 'not provided' && state !== ' ' ? (
+          <p className="state">#{state}</p>
+        ) : (
+          ''
+        )}
+      </div>
 
       <div>
         <Overlay

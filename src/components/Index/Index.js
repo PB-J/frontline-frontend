@@ -19,11 +19,11 @@ const Index = ({ user, searchValue }) => {
 
   const filterData = index.filter(
     (item) =>
-      item.content.toLowerCase().includes(searchValueLowerCase) ||
-      item.facility.toLowerCase().includes(searchValueLowerCase) ||
-      item.name.toLowerCase().includes(searchValueLowerCase) ||
-      item.clinician.toLowerCase().includes(searchValueLowerCase) ||
-      item.state.toLowerCase().includes(searchValueLowerCase)
+      item.content?.toLowerCase().includes(searchValueLowerCase) ||
+      item.facility?.toLowerCase().includes(searchValueLowerCase) ||
+      item.name?.toLowerCase().includes(searchValueLowerCase) ||
+      item.clinician?.toLowerCase().includes(searchValueLowerCase) ||
+      item.state?.toLowerCase().includes(searchValueLowerCase)
   )
 
   const breakpointColumnsObj = {

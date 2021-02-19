@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 import { Form, FormControl } from 'react-bootstrap'
@@ -26,9 +25,9 @@ const authenticatedOptions = (
       </Nav.Link>
     </div>
     <div className="sign-out-link">
-      <Link to="/sign-out">
+      <Nav.Link href="#sign-out">
         <p>Sign Out</p>
-      </Link>
+      </Nav.Link>
     </div>
   </div>
 )
@@ -42,13 +41,7 @@ const unauthenticatedOptions = (
 const Header = ({ user, handleChange }) => {
   const hideSearchBar = window.location.hash === '#/profile'
   return (
-    <Navbar className="header-nav-bar" expand="lg">
-      <div className="mobile-create-post-link">
-        <Nav.Link href="#message">
-          <MdAddCircle className="message-icon" />
-          Add Post
-        </Nav.Link>
-      </div>
+    <Navbar collapseOnSelect className="header-nav-bar" expand="lg">
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="nav-dropdown">

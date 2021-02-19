@@ -1,5 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Spartan&display=swap');
 
+.my-masonry-grid {
+  display: -webkit-box; /* Not needed if autoprefixing */
+  display: -ms-flexbox; /* Not needed if autoprefixing */
+  display: flex;
+  margin-left: -30px; /* gutter size offset */
+  width: auto;
+  max-width: 1000px;
+}
+.my-masonry-grid_column {
+  background-clip: padding-box;
+}
+
+/* Style your items */
+.my-masonry-grid_column > div {
+  /* change div to reference your elements you put in <Masonry> */
+  margin-bottom: 30px;
+}
+.masonry-container {
+  display: flex;
+  justify-content: center;
+}
+
 .edit-send {
   background-color: #03838c;
   color: white;
@@ -35,16 +57,14 @@
   font-family: 'Spartan', sans-serif;
   font-size: 24px;
   color: white;
-  width: 75%;
 }
 .profile-index-container {
   margin: auto;
   display: flex;
-  flex-wrap: wrap;
   overflow: scroll;
   background-color: #03838c;
   justify-content: center;
-  width: 75%;
+  width: 100%;
 }
 
 .link {
@@ -92,7 +112,6 @@
 
   .profile-index-container {
     display: flex;
-    flex-wrap: wrap;
     overflow: scroll;
     background-color: #03838c;
     width: 100%;
@@ -106,4 +125,15 @@
 .modal-backdrop.show {
   opacity: 1;
   background-color: #9ec3c6;
+}
+@media (max-width: 800px) {
+  .my-masonry-grid {
+    margin-left: -15px; /* gutter size offset */
+  }
+  .my-masonry-grid_column {
+    padding-left: 15px; /* gutter size offset */
+  }
+  .my-masonry-grid_column > div {
+    margin-bottom: 15px; /* space between items */
+  }
 }

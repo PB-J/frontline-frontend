@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import apiUrl from '../../apiConfig'
 import Card from '../Card/Card'
 import EmojiTextarea from '../Emoji/Emoji'
+import Masonry from 'react-masonry-css'
 import { Button, Modal } from 'react-bootstrap'
 import './profile.scss'
 
@@ -103,6 +104,12 @@ function Profile({ user, owner }) {
     })
   }
 
+  const breakpointColumnsObj = {
+    default: 3,
+    1390: 2,
+    940: 1
+  }
+
   useEffect(() => {
     axios({
       url: `${apiUrl}/profile/`,
@@ -146,7 +153,15 @@ function Profile({ user, owner }) {
         </Link>
       </div>
       <div className="sent-cards">Your Sent Cards ({index.length})</div>
-      <div className="profile-index-container">{messageData.reverse()}</div>
+      <div className="profile-index-container">
+        <Masonry
+          breakpointCols={breakpointColumnsObj}
+          className="my-masonry-grid"
+          columnClassName="my-masonry-grid_column"
+        >
+          {messageData.reverse()}
+        </Masonry>
+      </div>
       <Modal
         show={show}
         onHide={handleClose}

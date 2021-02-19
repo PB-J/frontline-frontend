@@ -18,21 +18,29 @@ const EmojiTextarea = ({ handleChange, setText, editValue }) => {
     setComment(text)
     setText(text)
     handleChange(text)
-    console.log(comment)
-    console.log(text)
   }
   return (
-    <div className = 'Emoji-Textarea'>
-      <textarea onChange = {handleText} value = {editValue} name='content'></textarea>
-      <div className = 'Emoji'>
-        { showEmojis
-          ? <div className = 'Emoji-Grid'>
-            {Emojis.map((value, key) => <span key = {key} onClick={() => handleEmoji(value.symbol)}>{value.symbol}</span>)}
+    <div className="Emoji-Textarea">
+      <textarea
+        onChange={handleText}
+        value={editValue}
+        name="content"
+      ></textarea>
+      <div className="Emoji">
+        {showEmojis ? (
+          <div className="Emoji-Grid">
+            {Emojis.map((value, key) => (
+              <span key={key} onClick={() => handleEmoji(value.symbol)}>
+                {value.symbol}
+              </span>
+            ))}
           </div>
-          : null
-        }
-        <div className = {showEmojis ? 'Emoji-On' : 'Emoji-Off'} onClick = {() => setShowEmojis(!showEmojis)}>
-          <Smiley/>
+        ) : null}
+        <div
+          className={showEmojis ? 'Emoji-On' : 'Emoji-Off'}
+          onClick={() => setShowEmojis(!showEmojis)}
+        >
+          <Smiley />
         </div>
       </div>
     </div>

@@ -13,7 +13,6 @@ const Message = ({ user, msgAlert }) => {
   const [message, setMessage] = useState({ name: user.username })
   const [messageId, setMessageId] = useState(null)
   const [text, setText] = useState('')
-  console.log(text)
   const handleCheck = (event) => {
     event.persist()
     const value =

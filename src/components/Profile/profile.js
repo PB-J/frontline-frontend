@@ -15,7 +15,6 @@ function Profile({ user, owner }) {
   const [messageId, setMessageId] = useState(null)
   const [text, setText] = useState('')
   const [editDeleteShow, setEditDeleteShow] = useState(false)
-  console.log(text)
   const handleContentChange = (text) => {
     setMessage((prevMessage) => {
       const updatedMessage = { content: text }
@@ -93,7 +92,6 @@ function Profile({ user, owner }) {
       },
       data: { message }
     }).then(() => {
-      console.log('Successfully Deleted')
       return axios({
         url: `${apiUrl}/profile/`,
         method: 'GET',

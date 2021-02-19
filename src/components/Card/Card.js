@@ -40,13 +40,9 @@ function Card({
       </div>
       <div
         className={
-          (facility !== 'not provided' &&
-            facility !== ' ' &&
-            facility !== '') ||
-          (clinician !== 'not provided' &&
-            clinician !== ' ' &&
-            clinician !== '') ||
-          (state !== 'not provided' && state !== ' ' && state !== '')
+          (facility !== 'not provided' && facility !== ' ' && facility) ||
+          (clinician !== 'not provided' && clinician !== ' ' && clinician) ||
+          (state !== 'not provided' && state !== ' ' && state)
             ? 'top-content'
             : 'top-content-no-content'
         }
@@ -57,19 +53,17 @@ function Card({
         <br />
       </div>
       <div className="bottom-content">
-        {facility !== 'not provided' && facility !== ' ' && facility !== '' ? (
+        {facility !== 'not provided' && facility !== ' ' && facility ? (
           <p className="facility">#{facility}</p>
         ) : (
           ''
         )}
-        {clinician !== 'not provided' &&
-        clinician !== ' ' &&
-        clinician !== '' ? (
+        {clinician !== 'not provided' && clinician !== ' ' && clinician ? (
           <p className="clinician">#{clinician}</p>
         ) : (
           ''
         )}
-        {state !== 'not provided' && state !== ' ' && state !== '' ? (
+        {state !== 'not provided' && state !== ' ' && state ? (
           <p className="state">#{state}</p>
         ) : (
           ''

@@ -51,17 +51,19 @@ function Card({
         <br />
       </div>
       <div className="bottom-content">
-        {facility !== 'not provided' && facility !== ' ' ? (
+        {facility !== 'not provided' && facility !== ' ' && facility !== '' ? (
           <p className="facility">#{facility}</p>
         ) : (
           ''
         )}
-        {clinician !== 'not provided' && clinician !== ' ' ? (
+        {clinician !== 'not provided' &&
+        clinician !== ' ' &&
+        clinician !== '' ? (
           <p className="clinician">#{clinician}</p>
         ) : (
           ''
         )}
-        {state !== 'not provided' && state !== ' ' ? (
+        {state !== 'not provided' && state !== ' ' && state !== '' ? (
           <p className="state">#{state}</p>
         ) : (
           ''

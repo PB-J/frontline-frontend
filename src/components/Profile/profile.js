@@ -15,7 +15,6 @@ function Profile({ user, owner }) {
   const [messageId, setMessageId] = useState(null)
   const [text, setText] = useState('')
   const [editDeleteShow, setEditDeleteShow] = useState(false)
-  console.log(text)
   const handleContentChange = (text) => {
     setMessage((prevMessage) => {
       const updatedMessage = { content: text }
@@ -93,7 +92,6 @@ function Profile({ user, owner }) {
       },
       data: { message }
     }).then(() => {
-      console.log('Successfully Deleted')
       return axios({
         url: `${apiUrl}/profile/`,
         method: 'GET',
@@ -107,6 +105,11 @@ function Profile({ user, owner }) {
   const breakpointColumnsObj = {
     default: 3,
     1390: 2,
+    940: 1
+  }
+
+  const breakpointColumnsObjOf2 = {
+    default: 2,
     940: 1
   }
 
@@ -154,13 +157,24 @@ function Profile({ user, owner }) {
       </div>
       <div className="sent-cards">Your Sent Cards ({index.length})</div>
       <div className="profile-index-container">
-        <Masonry
-          breakpointCols={breakpointColumnsObj}
-          className="my-masonry-grid"
-          columnClassName="my-masonry-grid_column"
-        >
-          {messageData.reverse()}
-        </Masonry>
+        {messageData.length > 2 && (
+          <Masonry
+            breakpointCols={breakpointColumnsObj}
+            className="my-masonry-grid"
+            columnClassName="my-masonry-grid_column"
+          >
+            {messageData.reverse()}
+          </Masonry>
+        )}
+        {messageData.length <= 2 && (
+          <Masonry
+            breakpointCols={breakpointColumnsObjOf2}
+            className="my-masonry-grid"
+            columnClassName="my-masonry-grid_column"
+          >
+            {messageData.reverse()}
+          </Masonry>
+        )}
       </div>
       <Modal
         show={show}

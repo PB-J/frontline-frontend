@@ -127,7 +127,12 @@
             flex-direction: column;
             width: 100%;
             .create-post-link {
-              display: none;
+              border-bottom: 1px solid #576464;
+              padding: 24px 0;
+              a {
+                padding: 0;
+                flex-direction: row;
+              }
             }
             .profile-link {
               border-bottom: 1px solid #576464;

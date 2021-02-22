@@ -42,7 +42,7 @@
     "eject": "react-scripts eject",
     "prettier-format": "prettier --config .prettierrc 'src/**/*.{js,scss}' --write",
     "lint": "eslint . --ext .js",
-    "deploy": "gh-pages --dist dist"
+    "deploy": "rm -rf dist && npm run build && gh-pages --dist dist"
   },
   "jest": {
     "collectCoverageFrom": [

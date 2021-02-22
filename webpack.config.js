@@ -34,6 +34,21 @@ const plugins = [
         from: 'public/manifest.json',
         to: 'assets/manifest.json',
         toType: 'file'
+      },
+      {
+        from: 'public/medithanks.png',
+        to: 'assets/medithanks.png',
+        toType: 'file'
+      },
+      {
+        from: 'public/medithanks-preview.png',
+        to: 'assets/medithanks-preview.png',
+        toType: 'file'
+      },
+      {
+        from: 'CNAME',
+        to: 'CNAME',
+        toType: 'file'
       }
     ]
   })

@@ -22,7 +22,6 @@ Through a digital forum for public 'thank you cards'
 ## Deployment
 
 ```
-npm run build
 npm run deploy
 ```
 

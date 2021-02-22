@@ -41,6 +41,11 @@ const plugins = [
         toType: 'file'
       },
       {
+        from: 'public/medithanks-preview.png',
+        to: 'assets/medithanks-preview.png',
+        toType: 'file'
+      },
+      {
         from: 'CNAME',
         to: 'CNAME',
         toType: 'file'

@@ -58,7 +58,7 @@ class SignIn extends Component {
           <h3 className="sign-in-title">Welcome Back!</h3>
           <Form onSubmit={this.onSignIn}>
             <Form.Group controlId="email">
-              <Form.Label>Email address</Form.Label>
+              <Form.Label>Email Address</Form.Label>
               <Form.Control
                 required
                 type="email"

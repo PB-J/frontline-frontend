@@ -1,13 +1,17 @@
 .sign-up-container {
   font-family: 'Spartan', sans-serif;
-  margin-top: 30px;
+  margin: 30px 0 0 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   .sign-up-form {
-    align-items: center;
     border: 2px solid black;
     box-shadow: 2px 2px 2px silver;
     padding: 30px;
-    width: 85vw;
+    margin: 0 !important;
+    width: 60vw;
     background: white;
 
     .sign-up-message {

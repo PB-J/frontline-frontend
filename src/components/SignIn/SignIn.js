@@ -54,7 +54,7 @@ class SignIn extends Component {
 
     return (
       <div className="row sign-in-container">
-        <div className="col-sm-10 col-md-8 mx-auto mt-5 sign-in-form">
+        <div className="sign-in-form">
           <h3 className="sign-in-title">Welcome Back!</h3>
           <Form onSubmit={this.onSignIn}>
             <Form.Group controlId="email">

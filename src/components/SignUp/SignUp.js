@@ -61,7 +61,7 @@ class SignUp extends Component {
 
     return (
       <div className="row sign-up-container">
-        <div className="col-sm-10 col-md-8 mx-auto mt-5 sign-up-form">
+        <div className="sign-up-form">
           <div className="sign-up-message">
             <h3 className="sign-up-title">Let&apos;s Get Started</h3>
             <p className="sign-up-content">
@@ -70,7 +70,6 @@ class SignUp extends Component {
           </div>
           <Form onSubmit={this.onSignUp}>
             <Form.Group controlId="username">
-
               <Form.Label>Display Name:</Form.Label>
               <Form.Control
                 required

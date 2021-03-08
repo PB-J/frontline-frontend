@@ -1,13 +1,17 @@
 .sign-in-container {
   font-family: 'Spartan', sans-serif;
-  margin-top: 50px;
+  margin: 50px 0 0 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   .sign-in-form {
-    align-items: center;
+    margin: 0 !important;
     border: 2px solid black;
     box-shadow: 2px 2px 2px silver;
     padding: 30px;
-    width: 85vw;
+    width: 50vw;
     background: white;
 
     .sign-in-title {

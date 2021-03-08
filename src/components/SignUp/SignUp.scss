@@ -1,13 +1,17 @@
 .sign-up-container {
   font-family: 'Spartan', sans-serif;
-  margin-top: 30px;
+  margin: 30px 0 0 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   .sign-up-form {
-    align-items: center;
     border: 2px solid black;
     box-shadow: 2px 2px 2px silver;
     padding: 30px;
-    width: 85vw;
+    margin: 0 !important;
+    width: 60vw;
     background: white;
 
     .sign-up-message {
@@ -39,6 +43,51 @@
         &:hover {
           cursor: pointer;
         }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .sign-up-container {
+    margin: 0;
+    width: 100%;
+    .sign-up-form {
+      border: none;
+      padding: 0 16px;
+      margin: 0 !important;
+      width: 100%;
+      height: 100vh;
+      .sign-up-message {
+        margin: 24px 0 48px 0;
+        .sign-up-title {
+          font-size: 24px;
+        }
+        .sign-up-content {
+          font-size: 18px;
+        }
+      }
+      .submit-button {
+        width: 100%;
+      }
+      label {
+        margin-bottom: 16px;
+      }
+      #username {
+        margin-bottom: 40px;
+      }
+      #email {
+        margin-bottom: 40px;
+      }
+      #password {
+        margin-bottom: 40px;
+      }
+      #passwordConfirmation {
+        margin-bottom: 40px;
+      }
+      .disclaimer {
+        margin-top: 16px;
+        margin-bottom: 0;
       }
     }
   }

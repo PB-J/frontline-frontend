@@ -8,11 +8,6 @@
   height: 96px;
 }
 
-// hide mobile create post link on large screen readers
-.mobile-create-post-link {
-  display: none;
-}
-
 .nav-header-links {
   display: flex;
   .create-post-link a {
@@ -76,13 +71,6 @@
 }
 
 // Media Breakpoints
-@media (max-width: 1024px) {
-  .navbar {
-    .mobile-create-post-link {
-      display: none;
-    }
-  }
-}
 
 @media (max-width: 991px) {
   .navbar {
@@ -105,20 +93,6 @@
     // Mobile Search Bar in Hamburger Dropdown
     .mobile-nav-search-bar {
       display: flex;
-    }
-    .mobile-create-post-link {
-      order: 2;
-      display: flex;
-      a {
-        color: black;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 0;
-        margin-left: 40px;
-        font-size: 14px;
-        font-weight: bold;
-      }
     }
     // Hamburger menu
     .navbar-toggler {
@@ -153,7 +127,12 @@
             flex-direction: column;
             width: 100%;
             .create-post-link {
-              display: none;
+              border-bottom: 1px solid #576464;
+              padding: 24px 0;
+              a {
+                padding: 0;
+                flex-direction: row;
+              }
             }
             .profile-link {
               border-bottom: 1px solid #576464;

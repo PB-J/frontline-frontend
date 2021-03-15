@@ -1,0 +1,50 @@
+.private-policy-container {
+  font-family: 'Spartan', sans-serif;
+  width: 800px;
+  margin: 50px auto;
+  background-color: white;
+  padding: 75px;
+  border: 1px solid black;
+  box-shadow: 3px 3px 3px 2px rgba(0, 0, 0, 0.4);
+  .private-policy-title {
+    font-weight: 700;
+  }
+  h5 {
+    font-weight: bold;
+    font-size: 1rem;
+  }
+  a {
+    color: #03838c;
+  }
+  .button-sign-up {
+    background-color: #03838c;
+    color: white;
+  }
+}
+
+@media (max-width: 480px) {
+  .private-policy-container {
+    font-family: 'Spartan', sans-serif;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    border: 0;
+    background-color: white;
+    padding: 10px;
+    box-shadow: 3px 3px 3px 2px rgba(0, 0, 0, 0.4);
+    .private-policy-title {
+      font-weight: 700;
+    }
+    h5 {
+      font-weight: bold;
+      font-size: 1rem;
+    }
+    a {
+      color: #03838c;
+    }
+    .button-sign-up {
+      background-color: #03838c;
+      color: white;
+    }
+  }
+}

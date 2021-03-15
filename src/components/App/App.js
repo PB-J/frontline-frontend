@@ -11,6 +11,7 @@ import ChangePassword from '../ChangePassword/ChangePassword'
 import Message from '../Messages/Message'
 import Index from '../Index/Index'
 import Profile from '../Profile/profile'
+import PrivatePolicy from '../Policy/PrivatePolicy'
 
 class App extends Component {
   constructor() {
@@ -68,6 +69,10 @@ class App extends Component {
             exact
             path="/"
             render={() => <Index user={user} searchValue={searchValue} />}
+          />
+          <Route
+            path="/private-policy"
+            render={() => <PrivatePolicy msgAlert={this.msgAlert} />}
           />
           <AuthenticatedRoute
             user={user}

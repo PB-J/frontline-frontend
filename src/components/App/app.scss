@@ -4,6 +4,10 @@
   align-items: center;
 }
 
+.main-container {
+  min-height: calc(100vh - 196px);
+}
+
 @media (max-width: 830px) {
   .container {
     padding: 0 !important;

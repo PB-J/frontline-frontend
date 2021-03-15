@@ -12,6 +12,7 @@ import Message from '../Messages/Message'
 import Index from '../Index/Index'
 import Profile from '../Profile/profile'
 import PrivatePolicy from '../Policy/PrivatePolicy'
+import Footer from '../Footer/Footer'
 
 class App extends Component {
   constructor() {
@@ -106,6 +107,7 @@ class App extends Component {
             render={() => <Profile user={user} history={history} />}
           />
         </main>
+        <Footer />
       </Fragment>
     )
   }

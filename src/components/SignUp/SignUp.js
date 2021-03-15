@@ -118,7 +118,8 @@ class SignUp extends Component {
             </Button>
           </Form>
           <p className="disclaimer">
-            By clicking this button, you agree to our <a>Privacy Policy</a>
+            By clicking this button, you agree to our{' '}
+            <a href="#private-policy">Privacy Policy</a>
           </p>
         </div>
       </div>

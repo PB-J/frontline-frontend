@@ -1,7 +1,6 @@
 import React from 'react'
 import Button from 'react-bootstrap/Button'
 
-// import styling
 import './PrivatePolicy.scss'
 
 const PrivatePolicy = () => {

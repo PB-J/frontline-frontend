@@ -71,10 +71,7 @@ class App extends Component {
             path="/"
             render={() => <Index user={user} searchValue={searchValue} />}
           />
-          <Route
-            path="/private-policy"
-            render={() => <PrivatePolicy msgAlert={this.msgAlert} />}
-          />
+          <Route path="/private-policy" render={() => <PrivatePolicy />} />
           <AuthenticatedRoute
             user={user}
             path="/sign-out"

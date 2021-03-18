@@ -4,14 +4,13 @@ import axios from 'axios'
 import apiUrl from '../../apiConfig'
 import { Redirect, withRouter } from 'react-router-dom'
 
-// import Picker from 'emoji-picker-react'
-// import Col from 'react-bootstrap/Col'
 import './message.scss'
 import EmojiTextarea from '../Emoji/Emoji'
 
 const Message = ({ user, msgAlert }) => {
   const [message, setMessage] = useState({ name: user.username })
   const [messageId, setMessageId] = useState(null)
+  // eslint-disable-next-line no-unused-vars
   const [text, setText] = useState('')
   const handleCheck = (event) => {
     event.persist()
@@ -108,7 +107,7 @@ const Message = ({ user, msgAlert }) => {
               />
             </div>
             <div className="create-message-option">
-              State:
+              Location:
               <input
                 name="state"
                 onChange={handleChange}
@@ -117,7 +116,6 @@ const Message = ({ user, msgAlert }) => {
             </div>
           </div>
         </div>
-        {/* <Picker/> */}
         <button to="/" type="submit" className="create-message-submit">
           Submit Post
         </button>

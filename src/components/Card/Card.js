@@ -2,8 +2,7 @@ import React, { useState, useRef } from 'react'
 import './card.scss'
 import { Button, Overlay } from 'react-bootstrap'
 import { BsThreeDotsVertical } from 'react-icons/bs'
-// import { FaEdit } from 'react-icons/fa'
-// import { RiDeleteBin2Fill } from 'react-icons/ri'
+
 import moment from 'moment'
 
 function Card({

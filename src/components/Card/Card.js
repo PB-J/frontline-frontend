@@ -2,7 +2,6 @@ import React, { useState, useRef } from 'react'
 import './card.scss'
 import { Button, Overlay } from 'react-bootstrap'
 import { BsThreeDotsVertical } from 'react-icons/bs'
-
 import moment from 'moment'
 
 function Card({
